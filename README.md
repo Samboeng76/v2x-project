@@ -197,36 +197,6 @@ This separation allows users to define an intersection using higher-level inform
 
 The resulting architecture will provide a path toward transmitting generated messages to other systems over an appropriate communication interface.
 
-## Dynamic SPaT Generation
-
-One potential extension of the message generator is the ability to represent signal behavior over time.
-
-Instead of defining only a single signal state, the configuration could describe the sequence of signal phases and their associated timing.
-
-The generator could maintain an internal simulation time and determine the appropriate signal state at each point in time. It could then generate the corresponding SPaT message for that point in the simulation.
-
-A simplified process could be:
-
-```text
-Signal configuration
-        ↓
-Simulation time
-        ↓
-Current signal state
-        ↓
-SPaT message construction
-        ↓
-ASN.1 encoding
-        ↓
-Encoded SPaT message
-        ↓
-Advance simulation time
-        ↓
-Next SPaT message
-```
-
-This functionality would provide a foundation for generating a continuous stream of messages for testing V2X applications.
-
 ## Validation and Testing
 
 Generated messages will need to be verified to ensure that they contain the information specified by the user and conform to the appropriate message definitions.
