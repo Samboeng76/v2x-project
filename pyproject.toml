@@ -1,0 +1,25 @@
+[project]
+name = "v2x-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sam English", email = "sbe80@msstate.edu" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pycrate>=0.8.1",
+    "pyjson5>=2.0.1",
+]
+
+[project.scripts]
+v2x-project = "v2x_project:main"
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.9",
+]

@@ -1,21 +1,24 @@
 {
-    "messageType": "SPAT",
+  messageType: "SPAT",
+  
+  intersection: {
+    id: 42,
+    region: 1,
+    name: "Test Intersection"
+  },
 
-    "intersection": {
-        "id": 1,
-        "name": "Main Street",
-
-        "signalGroups": [
-            {
-                "id": 1,
-                "state": "green",
-                "remainingTime": 25
-            },
-            {
-                "id": 2,
-                "state": "red",
-                "remainingTime": 30
-            }
-        ]
+  movements: [
+    {
+      name: "Northbound Through",
+      signalGroup: 1,
+      phase: "green",
+      duration: 10
+    },
+    {
+      name: "Eastbound Through",
+      signalGroup: 2,
+      phase: "red",
+      duration: 10
     }
+  ]
 }

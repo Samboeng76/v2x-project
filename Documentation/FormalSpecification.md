@@ -2,7 +2,7 @@ Overall Functionality:
 ----------------------
 
 1. The system shall parse a JSON5 input file containing the information required to generate a J2735 message.
-2. The JSON5 input format shall closely follow the structure of the corresponding SAE J2735 ASN.1 message definition.
+2. The JSON5 input format shall be higher level than the ASN1 definitions.
 3. The system shall obtain the required SAE J2735 ASN.1 definitions from the USDOT J2735 Python library.
 4. The system shall use PyCrate to construct and encode the generated message using the Unaligned Packed Encoding Rules (UPER).
 5. The system shall provide the resulting encoded message as raw hexadecimal bytes.
@@ -35,6 +35,33 @@ SPAT Functionality:
       * Confidence
       * Next Time
 5. Additional SPAT fields defined by the applicable SAE J2735 ASN.1 specification shall be evaluated for inclusion as the implementation is expanded.
+6. The input JSON shall consist of an intersection id, region, name, and a movements list. The movements list should consist of the approach name, signal group, phase (light color), and duration. A sample is provided below.
+```
+{
+  messageType: "SPAT",
+  
+  intersection: {
+    id: 42,
+    region: 1,
+    name: "Test Intersection"
+  },
+
+  movements: [
+    {
+      name: "Northbound Through",
+      signalGroup: 1,
+      phase: "green",
+      duration: 10
+    },
+    {
+      name: "Eastbound Through",
+      signalGroup: 2,
+      phase: "red",
+      duration: 10
+    }
+  ]
+}
+```
 
 Implementation Specifics:
 -------------------------
@@ -84,7 +111,7 @@ SPAT.IntersectionState.set_val({
 Tools To Use:
 -------------
 
-1. Package Manager:
-2. Formatter:
+1. Package Manager: uv
+2. Formatter: ruff
 3. Libraries: PyCrate, PyJson5,
    [USDOT J2735](https://github.com/usdot-fhwa-stol/j2735_202409/tree/main)
