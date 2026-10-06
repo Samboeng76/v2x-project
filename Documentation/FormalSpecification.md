@@ -1,106 +1,132 @@
-Overall Functionality:
+﻿Overall Functionality:
 ----------------------
 
+> **Draft status:** This specification is evolving alongside the prototype.
+> Items described as future work or requiring evaluation are not settled
+> requirements yet.
+
 1. The system shall parse a JSON5 input file containing the information required to generate a J2735 message.
-2. The JSON5 input format shall be higher level than the ASN1 definitions.
+2. The JSON5 input format shall be higher level than the ASN.1 definitions.
 3. The system shall obtain the required SAE J2735 ASN.1 definitions from the USDOT J2735 Python library.
 4. The system shall use PyCrate to construct and encode the generated message using the Unaligned Packed Encoding Rules (UPER).
 5. The system shall provide the resulting encoded message as raw hexadecimal bytes.
-6. The system shall provide default values for fields for which an input value is not explicitly provided. Specific default values shall be defined as the message implementation is further developed.
+6. The system shall provide documented defaults for fields that do not require a user-provided value. For SPaT, the status default is a 16-bit all-zero bit string.
+7. The generator shall support batch output to a text file, with one hex-encoded UPER message per line. Messages shall represent evenly spaced sample times; the generator shall not need to wait in real time while creating the file. The sum of the phase durations specifies the batch length.
+8. The optional JSON5 field `messageInterval` shall be a positive number of seconds between messages. It shall default to `0.1` seconds when omitted.
+9. Each output line shall encode a complete top-level J2735 `SPAT` data frame, including its `intersections` list. For this project, that list shall contain the configured intersection; output shall not encode an `IntersectionState` by itself.
 
 SPAT Functionality:
 -------------------
 
 1. The SPAT message format to be used is shown below.
 
-   * SPAT IntersectionState Message Required:
-     * ID (Region and ID)-- Both Int
-     * Revision -- Int
-     * Status -- Bitstring (0bxxxx, 16)
-     * States -- Meat of the message and further expanded upon below
-   * SPAT IntersectionState Message Optional
-     * Name -- String
-2. Default values should be provided for certain fields (Expand upon this later)
-3. Each movement state shall support, at minimum:
-   * Movement Name — String
-   * Signal Group — Integer
-   * State-Time-Speed — List of state and timing information
-4. Each State-Time-Speed entry shall support the following fields:
-   * Event State
-   * Timing (**Might not need all of these**)
-      * Start Time
-      * Minimum End Time
-      * Maximum End Time
-      * Likely Time
-      * Confidence
-      * Next Time
-5. Additional SPAT fields defined by the applicable SAE J2735 ASN.1 specification shall be evaluated for inclusion as the implementation is expanded.
-6. The input JSON shall consist of an intersection id, region, name, and a movements list. The movements list should consist of the approach name, signal group, phase (light color), and duration. A sample is provided below.
+   * Top-level `SPAT` data frame:
+     * `intersections` — list of 1 to 32 `IntersectionState` records
+     * `timeStamp` — optional integer (`MinuteOfTheYear`)
+     * `name` — optional string (`DescriptiveName`)
+   * Each `IntersectionState` requires:
+     * ID — `IntersectionReferenceID` containing an integer intersection ID; the optional region integer is omitted
+     * Revision — integer (`MsgCount`, 0 through 127), managed automatically
+     * Status — 16-bit bit string (`IntersectionStatusObject`); fixed to `(0, 16)` for now
+     * States — list of movement-state records (`MovementList`), described below
+   * SPAT IntersectionState Message Optional:
+     * Name — string (`DescriptiveName`)
+2. For now, status is fixed to `(0, 16)` (16 zero bits).
+3. The generator shall manage `revision` automatically: start at 0, increment per SPaT message, and wrap from 127 to 0. Do not provide it in JSON5.
+4. Each movement state shall support, at minimum:
+   * Movement name — string (`DescriptiveName`, optional in the ASN.1 structure)
+   * Signal group — integer (`SignalGroupID`, 1 through 254); for the current prototype, it shall be derived from the movement phase rather than supplied in JSON5
+   * State-Time-Speed — list of movement events (`MovementEventList`)
+5. Each State-Time-Speed entry shall support the following fields:
+   * Event state — enumerated value (`MovementPhaseState`)
+   * Timing — ASN.1 record (`TimeChangeDetails`)
+      * Minimum end time — integer (`TimeMark`, 0 through 36111), set to the end of the current phase interval
+
+   Only `minEndTime` is supported initially. Support for other timing fields may be added later.
+6. Additional SPAT fields defined by the applicable SAE J2735 ASN.1 specification shall be evaluated for inclusion as the implementation is expanded.
+7. The input JSON5 shall consist of the following fields:
+   * `messageType` — string; currently `"SPAT"`
+   * `includeTimestamps` — Boolean
+   * `messageInterval` — optional number of seconds between messages; defaults to `0.1`
+   * `intersection` — object containing:
+      * `id` — integer intersection ID
+      * `name` — string
+   * `movements` — array of movement objects containing:
+      * `name` — string
+      * `phases` — ordered array of phase intervals; each interval contains:
+         * `phase` — string enum (`MovementPhaseState`); use one of the ASN.1 names below:
+            * `unavailable` (0) — unsupported by the temporary signal-group rule; 0 is reserved
+            * `dark` (1) — signal unlit
+            * `stop-Then-Proceed` (2) — stop, then proceed when safe
+            * `stop-And-Remain` (3) — stop
+            * `pre-Movement` (4) — stop and prepare to proceed
+            * `permissive-Movement-Allowed` (5) — proceed, yielding to conflicting traffic
+            * `protected-Movement-Allowed` (6) — protected right-of-way
+            * `permissive-clearance` (7) — prepare to stop; clear if unable to stop safely
+            * `protected-clearance` (8) — clear in the indicated direction
+            * `caution-Conflicting-Traffic` (9) — proceed with caution; traffic may conflict
+         * `duration` — positive number of seconds for this phase interval, no more than 3600
+
+   The input shall not request or supply a region value; the optional `region` component of `IntersectionReferenceID` shall be omitted.
+
+   Temporary simplification: derive `signalGroup` from the phase number. This is not a stable movement ID: it changes with phase, and movements in the same phase share an ID. Revisit before linking SPaT to MAP.
+
+   Each `duration` specifies how long its phase remains active, up to one hour. Durations for every movement shall sum to the same batch length and be exact multiples of `messageInterval`. Sample at 0, `messageInterval`, 2 × `messageInterval`, and so on, stopping before the batch end. Each message contains the active phase for every movement; `minEndTime` marks that phase interval's end in tenths of a second within the current or next UTC hour. Use one UTC start time plus elapsed simulation time for timestamps and timing. Not every phase applies to every region or operating mode.
+8. `includeTimestamps` is required in JSON5. If `true`, populate available timestamp fields from the message's captured UTC time: top-level `timeStamp` and intersection `moy` (`MinuteOfTheYear` integers), and intersection `timeStamp` (`DSecond` integer). If `false`, omit optional timestamp fields.
+9. The batch length is the sum of the ordered phase durations. For example, 10 seconds of green followed by 5 seconds of yellow produces a 15-second batch: 150 messages at the default 0.1-second interval.
+
+Example JSON5 input:
+
 ```
 {
   messageType: "SPAT",
+  includeTimestamps: true,
+  messageInterval: 0.1,
   
   intersection: {
     id: 42,
-    region: 1,
     name: "Test Intersection"
   },
 
   movements: [
     {
       name: "Northbound Through",
-      signalGroup: 1,
-      phase: "green",
-      duration: 10
-    },
-    {
-      name: "Eastbound Through",
-      signalGroup: 2,
-      phase: "red",
-      duration: 10
+      phases: [
+        { phase: "protected-Movement-Allowed", duration: 10 },
+        { phase: "protected-clearance", duration: 5 }
+      ]
     }
   ]
 }
 ```
 
-Implementation Specifics:
--------------------------
+Implementation Notes
+--------------------
 
 1. The provided USDOT library can be used by `import j2735_202409.j2735_202409 as j2735`
 
 2. A SPAT object can be created by `SPAT = j2735.SPAT`
 
-3. Using the SPAT object, `SPAT.IntersectionState.set_val` can be used to directly modify SPAT fields. The code segment below shows a sample SPAT setup. **Do note that more fields may exist/need to be added.**
+3. The code below shows an exploratory `IntersectionState` value only. It is not a complete output message; batch output shall place the intersection state in the top-level `SPAT.intersections` list.
 
 ```
 SPAT.IntersectionState.set_val({
     "name": "Test Intersection",
 
-    "id": {
-        "region": 1,
-        "id": 42
-    },
+    "id": {"id": 42},
 
-    "revision": 1,
-    "status": (0b1011010010110110, 16),
+    "status": (0, 16),
     "states": [
         {
             "movementName": "Northbound Through",
 
-            "signalGroup": 1,
+            "signalGroup": 3,
 
             "state-time-speed": [
                 {
                     "eventState": "stop-And-Remain",
 
-                    "timing": {
-                        "startTime": 0,
-                        "minEndTime": 100,
-                        "maxEndTime": 100,
-                        "likelyTime": 100,
-                        "confidence": 0,
-                        "nextTime": 0
-                    }
+                    "timing": {"minEndTime": 100}
                 }
             ]
         }

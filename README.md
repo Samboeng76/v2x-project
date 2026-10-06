@@ -1,14 +1,16 @@
-V2X Message Generation
-======================
+V2X Message Generator
+=====================
 
-<mark>\[BAJ: Suggestions:</mark>
+> **Project status:** This project is a work in progress. The documentation
+> describes the intended design and current areas of investigation; not all
+> planned behavior is implemented yet.
 
-1. Add a `toc.md` to make this a CodeChat Editor project.
-2. Add links -- V2X, SPaT, MAP, etc. Preferably to protocol, etc.
-3. Define data structures. Use CCE to comment each field.
-4. How will the messages actually be sent? How should the car respond? Describe
-   system test scenarios.
-5. Suggested tools: pydantic, uv, ruff, ty\]
+## Documentation
+
+See the [project contents](toc.md) for an index of documentation, sample input,
+and source files. The [formal specification](Documentation/FormalSpecification.md)
+captures current requirements and open details. [Ideas and considerations](Documentation/IdeasAndConsiderations.md)
+records design options that are still being explored.
 
 Introduction
 ------------
@@ -82,13 +84,14 @@ user-defined information.
 The primary focus will be on generating MAP and SPaT messages for signalized
 intersections. The system will provide a way to describe an intersection and its
 traffic signals using higher-level information and then generate the
-corresponding J2735 <mark>\[BAJ: what is this? Spec link?\]</mark> messages.
+corresponding [SAE J2735](https://www.sae.org/standards/content/j2735_202409/)
+messages.
 
 Rather than requiring the user to manually construct the underlying ASN.1
 message structure, the user will provide information describing the desired
 intersection and signal behavior. The generator will then translate this
 information into the appropriate J2735 message structure and encode it using
-ASN.1 <mark>\[BAJ: spec/link?\]</mark>.
+ASN.1.
 
 This approach will make it possible to create different intersection
 configurations and message contents without manually constructing each
@@ -130,9 +133,8 @@ Configuration
 The message generator will use a user-defined configuration to specify the
 information required to generate a V2X message.
 
-The initial configuration format will use structured data such as JSON
-<mark>\[BAJ: consider JSON5, which is more human-friendly. Make sure you have a
-way to validate the data.\]</mark>. This will allow an intersection to be
+The initial configuration format is JSON5. Input validation will be defined as
+the configuration model is developed. This will allow an intersection to be
 described without requiring changes to the underlying message-generation code.
 
 A configuration may contain information describing:
@@ -259,7 +261,7 @@ Message Generation and Encoding
 The general message generation process will be:
 
 ```text
-User-defined JSON configuration
+User-defined JSON5 configuration
               ↓
 Intersection representation
               ↓

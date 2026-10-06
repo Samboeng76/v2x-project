@@ -2,7 +2,7 @@
 
 ### Input / Intersection Model
 
-* Use a JSON configuration as the initial user interface.
+* Use JSON5 as the initial configuration format.
 * Define a common internal representation of a signalized intersection.
 * Keep the configuration at a higher level than the underlying J2735 ASN.1 structures.
 * Determine how to represent:
@@ -53,18 +53,24 @@
 * Use round-trip testing:
 
 ```text
-JSON Configuration
-        ↓
+JSON5 Configuration
+        |
+        v
 Intersection Model
-        ↓
+        |
+        v
 J2735 Message
-        ↓
+        |
+        v
 ASN.1 / UPER Encoding
-        ↓
+        |
+        v
 Encoded Message
-        ↓
+        |
+        v
 Independent Decoder
-        ↓
+        |
+        v
 Compare With Input
 ```
 

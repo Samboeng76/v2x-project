@@ -1,0 +1,28 @@
+{
+  messageType: "SPAT",
+  includeTimestamps: true,
+  // Omit this field to use the default 0.1-second interval.
+  messageInterval: 0.1,
+
+  intersection: {
+    id: 42,
+    name: "Sample Intersection"
+  },
+
+  movements: [
+    {
+      name: "Northbound Through",
+      phases: [
+        { phase: "protected-Movement-Allowed", duration: 10 },
+        { phase: "protected-clearance", duration: 5 }
+      ]
+    },
+    {
+      name: "Eastbound Through",
+      phases: [
+        { phase: "stop-And-Remain", duration: 10 },
+        { phase: "permissive-Movement-Allowed", duration: 5 }
+      ]
+    }
+  ]
+}
