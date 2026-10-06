@@ -1,0 +1,6602 @@
+[
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 0,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 6650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 1,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 6750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 2,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 6850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 3,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 6950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 4,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 5,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 6,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 7,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 8,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 9,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 10,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 11,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 12,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 13,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 7950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 14,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 15,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 16,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 17,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 18,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 19,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 20,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 21,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 22,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 23,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 8950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 24,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 25,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 26,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 27,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 28,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 29,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 30,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 31,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 32,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 33,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 9950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 34,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 35,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 36,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 37,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 38,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 39,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 40,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 41,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 42,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 43,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 10950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 44,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 45,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 46,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 47,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 48,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 49,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 50,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 51,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 52,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 53,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 11950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 54,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 55,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 56,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 57,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 58,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 59,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 60,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 61,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 62,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 63,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 12950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 64,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 65,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 66,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 67,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 68,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 69,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 70,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 71,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 72,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 73,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 13950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 74,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 75,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 76,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 77,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 78,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 79,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 80,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 81,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 82,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 83,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 14950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 84,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 85,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 86,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 87,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 88,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 89,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 90,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 91,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 92,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 93,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 15950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 94,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 95,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 96,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 97,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 98,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 99,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 6,
+            "state-time-speed": [
+              {
+                "eventState": "protected-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 3,
+            "state-time-speed": [
+              {
+                "eventState": "stop-And-Remain",
+                "timing": {
+                  "minEndTime": 31966
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 100,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 101,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 102,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 103,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 16950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 104,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 105,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 106,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 107,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 108,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 109,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 110,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 111,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 112,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 113,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 17950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 114,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 115,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 116,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 117,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 118,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 119,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 120,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 121,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 122,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 123,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 18950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 124,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 125,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 126,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 127,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 0,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 1,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 2,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 3,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 4,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 5,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 19950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 6,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 7,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 8,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 9,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 10,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 11,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 12,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20650,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 13,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20750,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 14,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20850,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 15,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 20950,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 16,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21050,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 17,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21150,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 18,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21250,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 19,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21350,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 20,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21450,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 400493,
+    "intersections": [
+      {
+        "name": "Sample Intersection",
+        "id": {
+          "id": 42
+        },
+        "revision": 21,
+        "status": [
+          0,
+          16
+        ],
+        "moy": 400493,
+        "timeStamp": 21550,
+        "states": [
+          {
+            "movementName": "Northbound Through",
+            "signalGroup": 8,
+            "state-time-speed": [
+              {
+                "eventState": "protected-clearance",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          },
+          {
+            "movementName": "Eastbound Through",
+            "signalGroup": 5,
+            "state-time-speed": [
+              {
+                "eventState": "permissive-Movement-Allowed",
+                "timing": {
+                  "minEndTime": 32016
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
