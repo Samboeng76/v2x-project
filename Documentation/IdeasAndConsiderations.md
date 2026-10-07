@@ -100,7 +100,6 @@ Compare With Input
 
 ### Future Features
 
-* BSM generation
 * Multiple intersections
 * More advanced signal timing
 * Automated test scenario generation

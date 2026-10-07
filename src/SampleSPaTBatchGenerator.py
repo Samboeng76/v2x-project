@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 import pyjson5
-import j2735_202409.j2735_202409 as j2735
+import j2735_202409 as j2735
 
 
 SPAT = j2735.SPAT

@@ -14,7 +14,7 @@ from typing import Any
 
 from pycrate_asn1rt.err import PycrateErr
 
-import j2735_202409.j2735_202409 as j2735
+import j2735_202409 as j2735
 
 
 def decode_spat(hex_text: str) -> dict[str, Any]:

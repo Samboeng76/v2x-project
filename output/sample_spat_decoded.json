@@ -1,6 +1,6 @@
 [
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -12,8 +12,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 6650,
+        "moy": 401961,
+        "timeStamp": 13511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -22,7 +22,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -34,7 +34,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -56,8 +56,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 6750,
+        "moy": 401961,
+        "timeStamp": 13611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -66,7 +66,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -78,7 +78,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -100,8 +100,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 6850,
+        "moy": 401961,
+        "timeStamp": 13711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -110,7 +110,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -122,7 +122,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -132,7 +132,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -144,8 +144,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 6950,
+        "moy": 401961,
+        "timeStamp": 13811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -154,7 +154,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -166,7 +166,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -188,8 +188,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7050,
+        "moy": 401961,
+        "timeStamp": 13911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -198,7 +198,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -210,7 +210,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -232,8 +232,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7150,
+        "moy": 401961,
+        "timeStamp": 14011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -242,7 +242,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -254,7 +254,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -264,7 +264,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -276,8 +276,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7250,
+        "moy": 401961,
+        "timeStamp": 14111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -286,7 +286,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -298,7 +298,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -308,7 +308,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -320,8 +320,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7350,
+        "moy": 401961,
+        "timeStamp": 14211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -330,7 +330,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -342,7 +342,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -364,8 +364,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7450,
+        "moy": 401961,
+        "timeStamp": 14311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -374,7 +374,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -386,7 +386,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -396,7 +396,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -408,8 +408,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7550,
+        "moy": 401961,
+        "timeStamp": 14411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -418,7 +418,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -430,7 +430,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -440,7 +440,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -452,8 +452,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7650,
+        "moy": 401961,
+        "timeStamp": 14511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -462,7 +462,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -474,7 +474,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -484,7 +484,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -496,8 +496,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7750,
+        "moy": 401961,
+        "timeStamp": 14611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -506,7 +506,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -518,7 +518,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -528,7 +528,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -540,8 +540,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7850,
+        "moy": 401961,
+        "timeStamp": 14711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -550,7 +550,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -562,7 +562,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -572,7 +572,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -584,8 +584,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 7950,
+        "moy": 401961,
+        "timeStamp": 14811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -594,7 +594,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -606,7 +606,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -616,7 +616,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -628,8 +628,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8050,
+        "moy": 401961,
+        "timeStamp": 14911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -638,7 +638,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -650,7 +650,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -660,7 +660,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -672,8 +672,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8150,
+        "moy": 401961,
+        "timeStamp": 15011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -682,7 +682,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -694,7 +694,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -704,7 +704,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -716,8 +716,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8250,
+        "moy": 401961,
+        "timeStamp": 15111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -726,7 +726,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -738,7 +738,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -748,7 +748,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -760,8 +760,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8350,
+        "moy": 401961,
+        "timeStamp": 15211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -770,7 +770,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -782,7 +782,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -792,7 +792,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -804,8 +804,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8450,
+        "moy": 401961,
+        "timeStamp": 15311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -814,7 +814,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -826,7 +826,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -836,7 +836,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -848,8 +848,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8550,
+        "moy": 401961,
+        "timeStamp": 15411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -858,7 +858,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -870,7 +870,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -880,7 +880,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -892,8 +892,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8650,
+        "moy": 401961,
+        "timeStamp": 15511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -902,7 +902,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -914,7 +914,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -924,7 +924,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -936,8 +936,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8750,
+        "moy": 401961,
+        "timeStamp": 15611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -946,7 +946,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -958,7 +958,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -968,7 +968,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -980,8 +980,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8850,
+        "moy": 401961,
+        "timeStamp": 15711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -990,7 +990,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1002,7 +1002,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1012,7 +1012,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1024,8 +1024,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 8950,
+        "moy": 401961,
+        "timeStamp": 15811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1034,7 +1034,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1046,7 +1046,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1056,7 +1056,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1068,8 +1068,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9050,
+        "moy": 401961,
+        "timeStamp": 15911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1078,7 +1078,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1090,7 +1090,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1100,7 +1100,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1112,8 +1112,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9150,
+        "moy": 401961,
+        "timeStamp": 16011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1122,7 +1122,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1134,7 +1134,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1144,7 +1144,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1156,8 +1156,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9250,
+        "moy": 401961,
+        "timeStamp": 16111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1166,7 +1166,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1178,7 +1178,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1188,7 +1188,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1200,8 +1200,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9350,
+        "moy": 401961,
+        "timeStamp": 16211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1210,7 +1210,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1222,7 +1222,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1232,7 +1232,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1244,8 +1244,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9450,
+        "moy": 401961,
+        "timeStamp": 16311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1254,7 +1254,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1266,7 +1266,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1276,7 +1276,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1288,8 +1288,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9550,
+        "moy": 401961,
+        "timeStamp": 16411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1298,7 +1298,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1310,7 +1310,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1320,7 +1320,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1332,8 +1332,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9650,
+        "moy": 401961,
+        "timeStamp": 16511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1342,7 +1342,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1354,7 +1354,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1364,7 +1364,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1376,8 +1376,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9750,
+        "moy": 401961,
+        "timeStamp": 16611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1386,7 +1386,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1398,7 +1398,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1408,7 +1408,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1420,8 +1420,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9850,
+        "moy": 401961,
+        "timeStamp": 16711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1430,7 +1430,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1442,7 +1442,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1452,7 +1452,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1464,8 +1464,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 9950,
+        "moy": 401961,
+        "timeStamp": 16811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1474,7 +1474,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1486,7 +1486,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1496,7 +1496,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1508,8 +1508,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10050,
+        "moy": 401961,
+        "timeStamp": 16911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1518,7 +1518,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1530,7 +1530,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1540,7 +1540,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1552,8 +1552,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10150,
+        "moy": 401961,
+        "timeStamp": 17011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1562,7 +1562,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1574,7 +1574,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1584,7 +1584,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1596,8 +1596,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10250,
+        "moy": 401961,
+        "timeStamp": 17111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1606,7 +1606,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1618,7 +1618,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1628,7 +1628,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1640,8 +1640,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10350,
+        "moy": 401961,
+        "timeStamp": 17211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1650,7 +1650,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1662,7 +1662,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1672,7 +1672,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1684,8 +1684,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10450,
+        "moy": 401961,
+        "timeStamp": 17311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1694,7 +1694,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1706,7 +1706,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1716,7 +1716,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1728,8 +1728,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10550,
+        "moy": 401961,
+        "timeStamp": 17411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1738,7 +1738,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1750,7 +1750,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1760,7 +1760,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1772,8 +1772,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10650,
+        "moy": 401961,
+        "timeStamp": 17511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1782,7 +1782,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1794,7 +1794,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1804,7 +1804,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1816,8 +1816,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10750,
+        "moy": 401961,
+        "timeStamp": 17611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1826,7 +1826,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1838,7 +1838,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1848,7 +1848,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1860,8 +1860,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10850,
+        "moy": 401961,
+        "timeStamp": 17711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1870,7 +1870,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1882,7 +1882,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1892,7 +1892,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1904,8 +1904,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 10950,
+        "moy": 401961,
+        "timeStamp": 17811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1914,7 +1914,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1926,7 +1926,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1936,7 +1936,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1948,8 +1948,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11050,
+        "moy": 401961,
+        "timeStamp": 17911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -1958,7 +1958,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1970,7 +1970,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -1980,7 +1980,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -1992,8 +1992,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11150,
+        "moy": 401961,
+        "timeStamp": 18011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2002,7 +2002,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2014,7 +2014,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2024,7 +2024,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2036,8 +2036,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11250,
+        "moy": 401961,
+        "timeStamp": 18111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2046,7 +2046,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2058,7 +2058,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2068,7 +2068,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2080,8 +2080,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11350,
+        "moy": 401961,
+        "timeStamp": 18211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2090,7 +2090,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2102,7 +2102,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2112,7 +2112,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2124,8 +2124,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11450,
+        "moy": 401961,
+        "timeStamp": 18311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2134,7 +2134,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2146,7 +2146,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2156,7 +2156,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2168,8 +2168,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11550,
+        "moy": 401961,
+        "timeStamp": 18411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2178,7 +2178,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2190,7 +2190,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2200,7 +2200,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2212,8 +2212,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11650,
+        "moy": 401961,
+        "timeStamp": 18511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2222,7 +2222,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2234,7 +2234,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2244,7 +2244,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2256,8 +2256,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11750,
+        "moy": 401961,
+        "timeStamp": 18611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2266,7 +2266,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2278,7 +2278,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2288,7 +2288,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2300,8 +2300,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11850,
+        "moy": 401961,
+        "timeStamp": 18711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2310,7 +2310,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2322,7 +2322,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2332,7 +2332,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2344,8 +2344,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 11950,
+        "moy": 401961,
+        "timeStamp": 18811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2354,7 +2354,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2366,7 +2366,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2376,7 +2376,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2388,8 +2388,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12050,
+        "moy": 401961,
+        "timeStamp": 18911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2398,7 +2398,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2410,7 +2410,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2420,7 +2420,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2432,8 +2432,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12150,
+        "moy": 401961,
+        "timeStamp": 19011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2442,7 +2442,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2454,7 +2454,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2464,7 +2464,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2476,8 +2476,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12250,
+        "moy": 401961,
+        "timeStamp": 19111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2486,7 +2486,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2498,7 +2498,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2508,7 +2508,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2520,8 +2520,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12350,
+        "moy": 401961,
+        "timeStamp": 19211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2530,7 +2530,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2542,7 +2542,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2552,7 +2552,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2564,8 +2564,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12450,
+        "moy": 401961,
+        "timeStamp": 19311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2574,7 +2574,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2586,7 +2586,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2596,7 +2596,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2608,8 +2608,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12550,
+        "moy": 401961,
+        "timeStamp": 19411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2618,7 +2618,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2630,7 +2630,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2640,7 +2640,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2652,8 +2652,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12650,
+        "moy": 401961,
+        "timeStamp": 19511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2662,7 +2662,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2674,7 +2674,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2684,7 +2684,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2696,8 +2696,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12750,
+        "moy": 401961,
+        "timeStamp": 19611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2706,7 +2706,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2718,7 +2718,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2728,7 +2728,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2740,8 +2740,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12850,
+        "moy": 401961,
+        "timeStamp": 19711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2750,7 +2750,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2762,7 +2762,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2772,7 +2772,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2784,8 +2784,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 12950,
+        "moy": 401961,
+        "timeStamp": 19811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2794,7 +2794,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2806,7 +2806,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2816,7 +2816,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2828,8 +2828,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13050,
+        "moy": 401961,
+        "timeStamp": 19911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2838,7 +2838,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2850,7 +2850,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2860,7 +2860,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2872,8 +2872,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13150,
+        "moy": 401961,
+        "timeStamp": 20011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2882,7 +2882,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2894,7 +2894,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2904,7 +2904,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2916,8 +2916,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13250,
+        "moy": 401961,
+        "timeStamp": 20111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2926,7 +2926,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2938,7 +2938,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2948,7 +2948,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -2960,8 +2960,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13350,
+        "moy": 401961,
+        "timeStamp": 20211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -2970,7 +2970,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2982,7 +2982,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -2992,7 +2992,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3004,8 +3004,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13450,
+        "moy": 401961,
+        "timeStamp": 20311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3014,7 +3014,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3026,7 +3026,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3036,7 +3036,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3048,8 +3048,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13550,
+        "moy": 401961,
+        "timeStamp": 20411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3058,7 +3058,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3070,7 +3070,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3080,7 +3080,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3092,8 +3092,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13650,
+        "moy": 401961,
+        "timeStamp": 20511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3102,7 +3102,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3114,7 +3114,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3124,7 +3124,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3136,8 +3136,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13750,
+        "moy": 401961,
+        "timeStamp": 20611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3146,7 +3146,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3158,7 +3158,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3168,7 +3168,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3180,8 +3180,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13850,
+        "moy": 401961,
+        "timeStamp": 20711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3190,7 +3190,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3202,7 +3202,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3212,7 +3212,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3224,8 +3224,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 13950,
+        "moy": 401961,
+        "timeStamp": 20811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3234,7 +3234,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3246,7 +3246,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3256,7 +3256,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3268,8 +3268,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14050,
+        "moy": 401961,
+        "timeStamp": 20911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3278,7 +3278,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3290,7 +3290,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3300,7 +3300,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3312,8 +3312,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14150,
+        "moy": 401961,
+        "timeStamp": 21011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3322,7 +3322,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3334,7 +3334,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3344,7 +3344,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3356,8 +3356,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14250,
+        "moy": 401961,
+        "timeStamp": 21111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3366,7 +3366,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3378,7 +3378,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3388,7 +3388,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3400,8 +3400,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14350,
+        "moy": 401961,
+        "timeStamp": 21211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3410,7 +3410,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3422,7 +3422,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3432,7 +3432,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3444,8 +3444,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14450,
+        "moy": 401961,
+        "timeStamp": 21311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3454,7 +3454,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3466,7 +3466,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3476,7 +3476,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3488,8 +3488,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14550,
+        "moy": 401961,
+        "timeStamp": 21411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3498,7 +3498,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3510,7 +3510,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3520,7 +3520,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3532,8 +3532,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14650,
+        "moy": 401961,
+        "timeStamp": 21511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3542,7 +3542,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3554,7 +3554,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3564,7 +3564,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3576,8 +3576,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14750,
+        "moy": 401961,
+        "timeStamp": 21611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3586,7 +3586,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3598,7 +3598,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3608,7 +3608,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3620,8 +3620,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14850,
+        "moy": 401961,
+        "timeStamp": 21711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3630,7 +3630,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3642,7 +3642,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3652,7 +3652,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3664,8 +3664,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 14950,
+        "moy": 401961,
+        "timeStamp": 21811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3674,7 +3674,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3686,7 +3686,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3696,7 +3696,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3708,8 +3708,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15050,
+        "moy": 401961,
+        "timeStamp": 21911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3718,7 +3718,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3730,7 +3730,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3740,7 +3740,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3752,8 +3752,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15150,
+        "moy": 401961,
+        "timeStamp": 22011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3762,7 +3762,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3774,7 +3774,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3784,7 +3784,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3796,8 +3796,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15250,
+        "moy": 401961,
+        "timeStamp": 22111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3806,7 +3806,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3818,7 +3818,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3828,7 +3828,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3840,8 +3840,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15350,
+        "moy": 401961,
+        "timeStamp": 22211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3850,7 +3850,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3862,7 +3862,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3872,7 +3872,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3884,8 +3884,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15450,
+        "moy": 401961,
+        "timeStamp": 22311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3894,7 +3894,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3906,7 +3906,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3916,7 +3916,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3928,8 +3928,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15550,
+        "moy": 401961,
+        "timeStamp": 22411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3938,7 +3938,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3950,7 +3950,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3960,7 +3960,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -3972,8 +3972,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15650,
+        "moy": 401961,
+        "timeStamp": 22511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -3982,7 +3982,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -3994,7 +3994,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4004,7 +4004,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4016,8 +4016,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15750,
+        "moy": 401961,
+        "timeStamp": 22611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4026,7 +4026,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4038,7 +4038,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4048,7 +4048,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4060,8 +4060,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15850,
+        "moy": 401961,
+        "timeStamp": 22711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4070,7 +4070,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4082,7 +4082,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4092,7 +4092,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4104,8 +4104,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 15950,
+        "moy": 401961,
+        "timeStamp": 22811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4114,7 +4114,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4126,7 +4126,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4136,7 +4136,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4148,8 +4148,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16050,
+        "moy": 401961,
+        "timeStamp": 22911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4158,7 +4158,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4170,7 +4170,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4180,7 +4180,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4192,8 +4192,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16150,
+        "moy": 401961,
+        "timeStamp": 23011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4202,7 +4202,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4214,7 +4214,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4224,7 +4224,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4236,8 +4236,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16250,
+        "moy": 401961,
+        "timeStamp": 23111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4246,7 +4246,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4258,7 +4258,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4268,7 +4268,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4280,8 +4280,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16350,
+        "moy": 401961,
+        "timeStamp": 23211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4290,7 +4290,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4302,7 +4302,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4312,7 +4312,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4324,8 +4324,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16450,
+        "moy": 401961,
+        "timeStamp": 23311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4334,7 +4334,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4346,7 +4346,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4356,7 +4356,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4368,8 +4368,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16550,
+        "moy": 401961,
+        "timeStamp": 23411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4378,7 +4378,7 @@
               {
                 "eventState": "protected-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4390,7 +4390,7 @@
               {
                 "eventState": "stop-And-Remain",
                 "timing": {
-                  "minEndTime": 31966
+                  "minEndTime": 12835
                 }
               }
             ]
@@ -4400,7 +4400,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4412,8 +4412,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16650,
+        "moy": 401961,
+        "timeStamp": 23511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4422,7 +4422,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4434,7 +4434,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4444,7 +4444,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4456,8 +4456,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16750,
+        "moy": 401961,
+        "timeStamp": 23611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4466,7 +4466,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4478,7 +4478,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4488,7 +4488,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4500,8 +4500,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16850,
+        "moy": 401961,
+        "timeStamp": 23711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4510,7 +4510,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4522,7 +4522,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4532,7 +4532,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4544,8 +4544,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 16950,
+        "moy": 401961,
+        "timeStamp": 23811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4554,7 +4554,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4566,7 +4566,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4576,7 +4576,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4588,8 +4588,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17050,
+        "moy": 401961,
+        "timeStamp": 23911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4598,7 +4598,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4610,7 +4610,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4620,7 +4620,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4632,8 +4632,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17150,
+        "moy": 401961,
+        "timeStamp": 24011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4642,7 +4642,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4654,7 +4654,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4664,7 +4664,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4676,8 +4676,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17250,
+        "moy": 401961,
+        "timeStamp": 24111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4686,7 +4686,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4698,7 +4698,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4708,7 +4708,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4720,8 +4720,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17350,
+        "moy": 401961,
+        "timeStamp": 24211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4730,7 +4730,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4742,7 +4742,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4752,7 +4752,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4764,8 +4764,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17450,
+        "moy": 401961,
+        "timeStamp": 24311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4774,7 +4774,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4786,7 +4786,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4796,7 +4796,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4808,8 +4808,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17550,
+        "moy": 401961,
+        "timeStamp": 24411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4818,7 +4818,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4830,7 +4830,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4840,7 +4840,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4852,8 +4852,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17650,
+        "moy": 401961,
+        "timeStamp": 24511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4862,7 +4862,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4874,7 +4874,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4884,7 +4884,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4896,8 +4896,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17750,
+        "moy": 401961,
+        "timeStamp": 24611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4906,7 +4906,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4918,7 +4918,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4928,7 +4928,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4940,8 +4940,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17850,
+        "moy": 401961,
+        "timeStamp": 24711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4950,7 +4950,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4962,7 +4962,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -4972,7 +4972,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -4984,8 +4984,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 17950,
+        "moy": 401961,
+        "timeStamp": 24811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -4994,7 +4994,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5006,7 +5006,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5016,7 +5016,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5028,8 +5028,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18050,
+        "moy": 401961,
+        "timeStamp": 24911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5038,7 +5038,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5050,7 +5050,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5060,7 +5060,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5072,8 +5072,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18150,
+        "moy": 401961,
+        "timeStamp": 25011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5082,7 +5082,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5094,7 +5094,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5104,7 +5104,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5116,8 +5116,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18250,
+        "moy": 401961,
+        "timeStamp": 25111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5126,7 +5126,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5138,7 +5138,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5148,7 +5148,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5160,8 +5160,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18350,
+        "moy": 401961,
+        "timeStamp": 25211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5170,7 +5170,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5182,7 +5182,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5192,7 +5192,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5204,8 +5204,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18450,
+        "moy": 401961,
+        "timeStamp": 25311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5214,7 +5214,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5226,7 +5226,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5236,7 +5236,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5248,8 +5248,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18550,
+        "moy": 401961,
+        "timeStamp": 25411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5258,7 +5258,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5270,7 +5270,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5280,7 +5280,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5292,8 +5292,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18650,
+        "moy": 401961,
+        "timeStamp": 25511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5302,7 +5302,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5314,7 +5314,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5324,7 +5324,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5336,8 +5336,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18750,
+        "moy": 401961,
+        "timeStamp": 25611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5346,7 +5346,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5358,7 +5358,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5368,7 +5368,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5380,8 +5380,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18850,
+        "moy": 401961,
+        "timeStamp": 25711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5390,7 +5390,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5402,7 +5402,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5412,7 +5412,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5424,8 +5424,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 18950,
+        "moy": 401961,
+        "timeStamp": 25811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5434,7 +5434,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5446,7 +5446,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5456,7 +5456,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5468,8 +5468,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19050,
+        "moy": 401961,
+        "timeStamp": 25911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5478,7 +5478,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5490,7 +5490,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5500,7 +5500,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5512,8 +5512,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19150,
+        "moy": 401961,
+        "timeStamp": 26011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5522,7 +5522,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5534,7 +5534,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5544,7 +5544,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5556,8 +5556,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19250,
+        "moy": 401961,
+        "timeStamp": 26111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5566,7 +5566,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5578,7 +5578,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5588,7 +5588,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5600,8 +5600,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19350,
+        "moy": 401961,
+        "timeStamp": 26211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5610,7 +5610,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5622,7 +5622,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5632,7 +5632,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5644,8 +5644,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19450,
+        "moy": 401961,
+        "timeStamp": 26311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5654,7 +5654,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5666,7 +5666,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5676,7 +5676,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5688,8 +5688,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19550,
+        "moy": 401961,
+        "timeStamp": 26411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5698,7 +5698,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5710,7 +5710,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5720,7 +5720,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5732,8 +5732,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19650,
+        "moy": 401961,
+        "timeStamp": 26511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5742,7 +5742,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5754,7 +5754,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5764,7 +5764,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5776,8 +5776,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19750,
+        "moy": 401961,
+        "timeStamp": 26611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5786,7 +5786,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5798,7 +5798,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5808,7 +5808,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5820,8 +5820,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19850,
+        "moy": 401961,
+        "timeStamp": 26711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5830,7 +5830,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5842,7 +5842,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5852,7 +5852,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5864,8 +5864,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 19950,
+        "moy": 401961,
+        "timeStamp": 26811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5874,7 +5874,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5886,7 +5886,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5896,7 +5896,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5908,8 +5908,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20050,
+        "moy": 401961,
+        "timeStamp": 26911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5918,7 +5918,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5930,7 +5930,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5940,7 +5940,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5952,8 +5952,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20150,
+        "moy": 401961,
+        "timeStamp": 27011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -5962,7 +5962,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5974,7 +5974,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -5984,7 +5984,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -5996,8 +5996,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20250,
+        "moy": 401961,
+        "timeStamp": 27111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6006,7 +6006,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6018,7 +6018,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6028,7 +6028,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6040,8 +6040,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20350,
+        "moy": 401961,
+        "timeStamp": 27211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6050,7 +6050,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6062,7 +6062,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6072,7 +6072,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6084,8 +6084,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20450,
+        "moy": 401961,
+        "timeStamp": 27311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6094,7 +6094,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6106,7 +6106,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6116,7 +6116,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6128,8 +6128,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20550,
+        "moy": 401961,
+        "timeStamp": 27411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6138,7 +6138,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6150,7 +6150,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6160,7 +6160,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6172,8 +6172,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20650,
+        "moy": 401961,
+        "timeStamp": 27511,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6182,7 +6182,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6194,7 +6194,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6204,7 +6204,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6216,8 +6216,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20750,
+        "moy": 401961,
+        "timeStamp": 27611,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6226,7 +6226,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6238,7 +6238,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6248,7 +6248,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6260,8 +6260,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20850,
+        "moy": 401961,
+        "timeStamp": 27711,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6270,7 +6270,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6282,7 +6282,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6292,7 +6292,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6304,8 +6304,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 20950,
+        "moy": 401961,
+        "timeStamp": 27811,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6314,7 +6314,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6326,7 +6326,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6336,7 +6336,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6348,8 +6348,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21050,
+        "moy": 401961,
+        "timeStamp": 27911,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6358,7 +6358,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6370,7 +6370,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6380,7 +6380,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6392,8 +6392,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21150,
+        "moy": 401961,
+        "timeStamp": 28011,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6402,7 +6402,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6414,7 +6414,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6424,7 +6424,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6436,8 +6436,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21250,
+        "moy": 401961,
+        "timeStamp": 28111,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6446,7 +6446,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6458,7 +6458,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6468,7 +6468,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6480,8 +6480,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21350,
+        "moy": 401961,
+        "timeStamp": 28211,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6490,7 +6490,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6502,7 +6502,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6512,7 +6512,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6524,8 +6524,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21450,
+        "moy": 401961,
+        "timeStamp": 28311,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6534,7 +6534,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6546,7 +6546,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6556,7 +6556,7 @@
     ]
   },
   {
-    "timeStamp": 400493,
+    "timeStamp": 401961,
     "intersections": [
       {
         "name": "Sample Intersection",
@@ -6568,8 +6568,8 @@
           0,
           16
         ],
-        "moy": 400493,
-        "timeStamp": 21550,
+        "moy": 401961,
+        "timeStamp": 28411,
         "states": [
           {
             "movementName": "Northbound Through",
@@ -6578,7 +6578,7 @@
               {
                 "eventState": "protected-clearance",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
@@ -6590,7 +6590,7 @@
               {
                 "eventState": "permissive-Movement-Allowed",
                 "timing": {
-                  "minEndTime": 32016
+                  "minEndTime": 12885
                 }
               }
             ]
