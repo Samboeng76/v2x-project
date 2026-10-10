@@ -14,19 +14,7 @@
    using the Unaligned Packed Encoding Rules (UPER).
 5. The system shall provide the resulting encoded message as raw hexadecimal
    bytes.
-6. The system shall provide documented defaults for fields that do not require a
-   user-provided value. For SPaT, the status default is a 16-bit all-zero bit
-   string.
-7. The generator shall support batch output to a text file, with one hex-encoded
-   UPER message per line. Messages shall represent evenly spaced sample times;
-   the generator shall not need to wait in real time while creating the file.
-   The sum of the phase durations specifies the batch length.
-8. The optional JSON5 field `messageInterval` shall be a positive number of
-   seconds between messages. It shall default to `0.1` seconds when omitted.
-9. Each output line shall encode a complete top-level J2735 `SPAT` data frame,
-   including its `intersections` list. For this project, that list shall contain
-   the configured intersection; output shall not encode an `IntersectionState`
-   by itself.
+
 
 SPAT Functionality:
 -------------------
@@ -128,6 +116,23 @@ SPAT Functionality:
    seconds of green followed by 5 seconds of yellow produces a 15-second batch:
    150 messages at the default 0.1-second interval.
 
+10. The system shall provide documented defaults for fields that do not require a
+   user-provided value. For SPaT, the status default is a 16-bit all-zero bit
+   string.
+
+11. The generator shall support batch output to a text file, with one hex-encoded
+   UPER message per line. Messages shall represent evenly spaced sample times;
+   the generator shall not need to wait in real time while creating the file.
+   The sum of the phase durations specifies the batch length.
+
+12. The optional JSON5 field `messageInterval` shall be a positive number of
+   seconds between messages. It shall default to `0.1` seconds when omitted.
+
+13. Each output line shall encode a complete top-level J2735 `SPAT` data frame,
+   including its `intersections` list. For this project, that list shall contain
+   the configured intersection; output shall not encode an `IntersectionState`
+   by itself.
+
 Example JSON5 input:
 
 ```
@@ -152,6 +157,50 @@ Example JSON5 input:
   ]
 }
 ```
+
+MAP Functionality:
+------------------
+
+1. The system shall convert the completed MAP `MapData` value to UPER-encoded
+   bytes.
+
+2. The MAP message format to be used is shown below.
+
+   * Top-level `MapData` data frame:
+     * `timeStamp`: optional integer (`MinuteOfTheYear`)
+     * `msgIssueRevision`: integer (`MsgCount`, 0 through 127)
+     * `layerType`: optional enumeration (`LayerType`)
+     * `layerID`: optional integer (`LayerID`)
+     * `intersections`: optional list of intersection geometries
+       (`IntersectionGeometryList`)
+     * `regional`: optional list of regional extensions
+       (`RegionalExtension`)
+   * Fields Being ignored:
+     * `roadSegments`: optional list of roadway descriptions
+       (`RoadSegmentList`)
+     * `dataParameters`: optional metadata about the map contents
+       (`DataParameters`)
+     * `restrictionList`: optional restriction class assignments
+       (`RestrictionClassList`)
+
+3. As seen above, the `dataParameters` and `restrictionList` are not being supported. This project
+   also is focused the intersection aspect of the MAP messages. Due to this, all fields specifying
+   road segments (`roadSegments` and subfields) are not being implemnted at this time.
+
+4. Unlike SPaT messages, MAP messages will not be generated in batches. For the
+   current static-map implementation, the top-level `msgIssueRevision` value
+   shall remain at zero.
+
+5. Each generated `IntersectionGeometry` shall include:
+
+   * `id`: an `IntersectionReferenceID` with an `IntersectionID`; the optional
+     `region` value is omitted in the initial local-project profile
+   * `revision`: a `MsgCount` integer from 0 through 127
+   * `refPoint`: a `Position3D` containing latitude, longitude, and optional
+     elevation
+   * `laneSet`: one or more `GenericLane` records
+
+
 
 SPaT Debugging Decoding:
 ------------------------

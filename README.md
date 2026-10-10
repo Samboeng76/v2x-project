@@ -61,6 +61,8 @@ must be positive and align with the configured message interval.
   options and possible future work.
 - [SPaT ASN.1 notes](Documentation/SPaT_ASN1.md): notes on the message
   structure.
+- [MAP ASN.1 notes](Documentation/MAP_ASN1.md): notes on the message
+  structure.
 - [Project contents](toc.md): documentation, sample inputs, and source files.
 
 ## Current scope
