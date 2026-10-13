@@ -15,7 +15,6 @@
 5. The system shall provide the resulting encoded message as raw hexadecimal
    bytes.
 
-
 SPAT Functionality:
 -------------------
 
@@ -29,12 +28,14 @@ SPAT Functionality:
      * ID: `IntersectionReferenceID` containing an integer intersection ID; the
        optional region integer is omitted
      * Revision: integer (`MsgCount`, 0 through 127), managed automatically
-     * Status: 16-bit bit string (`IntersectionStatusObject`); fixed to
-       `(0, 16)` for now
+     * Status: 16-bit bit string (`IntersectionStatusObject`); defaults to
+       (0, 16)
      * States: list of movement-state records (`MovementList`), described below
    * SPAT IntersectionState Message Optional:
      * Name: string (`DescriptiveName`)
-2. For now, status is fixed to `(0, 16)` (16 zero bits).
+2. Status shall be an optional field in the input JSON5 file. The default value
+   shall be `(0, 16)` (16 zero bits). The input format of the JSON5 will be a
+   string in the format "0bxxxxxxxxxxxxxxxx" or "0x1234."
 
 3. The generator shall manage `revision` automatically: start at 0, increment
    per SPaT message, and wrap from 127 to 0. Do not provide it in JSON5.
@@ -63,17 +64,18 @@ SPAT Functionality:
 7. The input JSON5 shall consist of the following fields:
 
    * `messageType`: string; currently `"SPAT"`
-   * `includeTimestamps`: Boolean
-   * `messageInterval`: optional number of seconds between messages; defaults
-     to `0.1`
+   * `includeTimestamps`: Boolean; defaults to true; optional
+   * `messageInterval`: decimal; optional number of seconds between messages;
+     defaults to `0.1`
+   * `status`:string; optional; defaults to (0,16)
    * `intersection`: object containing:
      * `id`: integer intersection ID
      * `name`: string
    * `movements`: array of movement objects containing:
      * `name`: string
      * `phases`: ordered array of phase intervals; each interval contains:
-       * `phase`: string enum (`MovementPhaseState`); use one of the ASN.1
-         names below:
+       * `phase`: string enum (`MovementPhaseState`); use one of the ASN.1 names
+         below:
          * `unavailable` (0): unsupported by the temporary signal-group rule; 0
            is reserved
          * `dark` (1): signal unlit
@@ -88,8 +90,8 @@ SPAT Functionality:
          * `protected-clearance` (8): clear in the indicated direction
          * `caution-Conflicting-Traffic` (9): proceed with caution; traffic may
            conflict
-       * `duration`: positive number of seconds for this phase interval, no
-         more than 3600
+       * `duration`: positive number of seconds for this phase interval, no more
+         than 3600
 
    The input shall not request or supply a region value; the optional `region`
    component of `IntersectionReferenceID` shall be omitted.
@@ -100,38 +102,43 @@ SPAT Functionality:
 
    Each `duration` specifies how long its phase remains active, up to one hour.
    Durations for every movement shall sum to the same batch length and be exact
-   multiples of `messageInterval`. Sample at 0, `messageInterval`, 2 *
+   multiples of `messageInterval`. Sample at 0, `messageInterval`, 2 \*
    `messageInterval`, and so on, stopping before the batch end. Each message
    contains the active phase for every movement; `minEndTime` marks that phase
    interval's end in tenths of a second within the current or next UTC hour. Use
    one UTC start time plus elapsed simulation time for timestamps and timing.
    Not every phase applies to every region or operating mode.
 
-8. `includeTimestamps` is required in JSON5. If `true`, populate available
-   timestamp fields from the message's captured UTC time: top-level `timeStamp`
-   and intersection `moy` (`MinuteOfTheYear` integers), and intersection
-   `timeStamp` (`DSecond` integer). If `false`, omit optional timestamp fields.
+8. The input JSON5 shall allow for simplified phase names with "green"
+   corresponding to phase 6, "red" corresponding to phase 3, and "yellow"
+   corresponding to phase 8 (verify this). 
 
-9. The batch length is the sum of the ordered phase durations. For example, 10
-   seconds of green followed by 5 seconds of yellow produces a 15-second batch:
-   150 messages at the default 0.1-second interval.
+9. `includeTimestamps` is an optional field in JSON5. If `true`, populate
+   available timestamp fields from the message's captured UTC time: top-level
+   `timeStamp` and intersection `moy` (`MinuteOfTheYear` integers), and
+   intersection `timeStamp` (`DSecond` integer). True will be the defualt value.
 
-10. The system shall provide documented defaults for fields that do not require a
-   user-provided value. For SPaT, the status default is a 16-bit all-zero bit
-   string.
+10. The batch length is the sum of the ordered phase durations. For example, 10
+    seconds of green followed by 5 seconds of yellow produces a 15-second batch:
+    150 messages at the default 0.1-second interval.
 
-11. The generator shall support batch output to a text file, with one hex-encoded
-   UPER message per line. Messages shall represent evenly spaced sample times;
-   the generator shall not need to wait in real time while creating the file.
-   The sum of the phase durations specifies the batch length.
+11. The system shall provide documented defaults for fields that do not require
+    a user-provided value. For SPaT, the status default is a 16-bit all-zero bit
+    string.
 
-12. The optional JSON5 field `messageInterval` shall be a positive number of
-   seconds between messages. It shall default to `0.1` seconds when omitted.
+12. The generator shall support batch output to a text file, with one
+    hex-encoded UPER message per line. Messages shall represent evenly spaced
+    sample times; the generator shall not need to wait in real time while
+    creating the file. The sum of the phase durations specifies the batch
+    length.
 
-13. Each output line shall encode a complete top-level J2735 `SPAT` data frame,
-   including its `intersections` list. For this project, that list shall contain
-   the configured intersection; output shall not encode an `IntersectionState`
-   by itself.
+13. The optional JSON5 field `messageInterval` shall be a positive number of
+    seconds between messages. It shall default to `0.1` seconds when omitted.
+
+14. Each output line shall encode a complete top-level J2735 `SPAT` data frame,
+    including its `intersections` list. For this project, that list shall
+    contain the configured intersection; output shall not encode an
+    `IntersectionState` by itself.
 
 Example JSON5 input:
 
@@ -173,19 +180,17 @@ MAP Functionality:
      * `layerID`: optional integer (`LayerID`)
      * `intersections`: optional list of intersection geometries
        (`IntersectionGeometryList`)
-     * `regional`: optional list of regional extensions
-       (`RegionalExtension`)
+     * `regional`: optional list of regional extensions (`RegionalExtension`)
    * Fields Being ignored:
-     * `roadSegments`: optional list of roadway descriptions
-       (`RoadSegmentList`)
+     * `roadSegments`: optional list of roadway descriptions (`RoadSegmentList`)
      * `dataParameters`: optional metadata about the map contents
        (`DataParameters`)
      * `restrictionList`: optional restriction class assignments
        (`RestrictionClassList`)
-
-3. As seen above, the `dataParameters` and `restrictionList` are not being supported. This project
-   also is focused the intersection aspect of the MAP messages. Due to this, all fields specifying
-   road segments (`roadSegments` and subfields) are not being implemnted at this time.
+3. As seen above, the `dataParameters` and `restrictionList` are not being
+   supported. This project also is focused the intersection aspect of the MAP
+   messages. Due to this, all fields specifying road segments (`roadSegments`
+   and subfields) are not being implemnted at this time.
 
 4. Unlike SPaT messages, MAP messages will not be generated in batches. For the
    current static-map implementation, the top-level `msgIssueRevision` value
@@ -199,8 +204,6 @@ MAP Functionality:
    * `refPoint`: a `Position3D` containing latitude, longitude, and optional
      elevation
    * `laneSet`: one or more `GenericLane` records
-
-
 
 SPaT Debugging Decoding:
 ------------------------
