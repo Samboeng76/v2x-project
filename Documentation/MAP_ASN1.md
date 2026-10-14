@@ -15,7 +15,7 @@ other messages, especially SPaT, refer to the applicable lanes and movements.
 MapData
 |-- timeStamp: MinuteOfTheYear (optional; 0..527040 minutes)
 |-- msgIssueRevision: MsgCount (0..127)
-|-- layerType: LayerType (optional)
+|-- layerType: LayerType (optional; enumerated) 
 |-- layerID: LayerID (optional; 0..100)
 |-- intersections: IntersectionGeometryList (optional; 1..32)
 |   `-- IntersectionGeometry

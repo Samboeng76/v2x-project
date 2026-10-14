@@ -1,5 +1,5 @@
-﻿Overall Functionality:
-----------------------
+﻿sOverall Functionality:
+-----------------------
 
 > **Draft status:** This specification is evolving alongside the prototype.
 > Items described as future work or requiring evaluation are not settled
@@ -73,8 +73,8 @@ SPAT Functionality:
      * `3`: Eastbound through
      * `4`: Westbound through
      * `5`: Northbound left turn
-     * `6`: Southbound left turn
-     Other signal group assignments are not supported by this initial profile.
+     * `6`: Southbound left turn Other signal group assignments are not
+       supported by this initial profile.
    * State-Time-Speed: list of movement events (`MovementEventList`)
 5. Each State-Time-Speed entry shall support the following fields:
 
@@ -117,24 +117,17 @@ SPAT Functionality:
      * `status`: string; optional; defaults to (0, 16)
 
    Each SPaT movement's `phases` array contains ordered phase intervals. Each
-   interval contains:
-       * `phase`: string enum (`MovementPhaseState`); use one of the ASN.1 names
-         below:
-         * `unavailable` (0): not supported in the initial project profile
-         * `dark` (1): signal unlit
-         * `stop-Then-Proceed` (2): stop, then proceed when safe
-         * `stop-And-Remain` (3): stop
-         * `pre-Movement` (4): stop and prepare to proceed
-         * `permissive-Movement-Allowed` (5): proceed, yielding to conflicting
-           traffic
-         * `protected-Movement-Allowed` (6): protected right-of-way
-         * `permissive-clearance` (7): prepare to stop; clear if unable to stop
-           safely
-         * `protected-clearance` (8): clear in the indicated direction
-         * `caution-Conflicting-Traffic` (9): proceed with caution; traffic may
-           conflict
-       * `duration`: positive number of seconds for this phase interval, no more
-         than 3600
+   interval contains: \* `phase`: string enum (`MovementPhaseState`); use one of
+   the ASN.1 names below: \* `unavailable` (0): not supported in the initial
+   project profile \* `dark` (1): signal unlit \* `stop-Then-Proceed` (2): stop,
+   then proceed when safe \* `stop-And-Remain` (3): stop \* `pre-Movement` (4):
+   stop and prepare to proceed \* `permissive-Movement-Allowed` (5): proceed,
+   yielding to conflicting traffic \* `protected-Movement-Allowed` (6):
+   protected right-of-way \* `permissive-clearance` (7): prepare to stop; clear
+   if unable to stop safely \* `protected-clearance` (8): clear in the indicated
+   direction \* `caution-Conflicting-Traffic` (9): proceed with caution; traffic
+   may conflict \* `duration`: positive number of seconds for this phase
+   interval, no more than 3600
 
    The input shall not request or supply a region value; the optional `region`
    component of `IntersectionReferenceID` shall be omitted.
@@ -153,8 +146,7 @@ SPAT Functionality:
    the shared UTC start time plus elapsed simulation time for SPaT timestamps
    and timing. When MAP and SPaT are generated together, the MAP timestamp
    corresponds to the shared start time, which is also the timestamp of SPaT's
-   first sample.
-   Not every phase applies to every region or operating mode.
+   first sample. Not every phase applies to every region or operating mode.
 
 8. The SPaT phase schedule shall allow for simplified phase names with "green"
    corresponding to phase 6, "red" corresponding to phase 3, and "yellow"
@@ -183,7 +175,7 @@ SPAT Functionality:
 
 13. The optional JSON5 field `messageInterval` shall be a positive number of
     seconds between messages. It shall default to `0.1` seconds when omitted.
-    `0.1` seconds is the shortest supported interval. 
+    `0.1` seconds is the shortest supported interval.
 
 14. Each output line shall encode a complete top-level J2735 `SPAT` data frame,
     including its `intersections` list. For this project, that list shall
@@ -232,7 +224,11 @@ MAP Functionality:
    * Top-level `MapData` data frame:
      * `timeStamp`: optional integer (`MinuteOfTheYear`)
      * `msgIssueRevision`: integer (`MsgCount`, 0 through 127)
-     * `layerType`: optional enumeration (`LayerType`)
+     * `layerType`: optional enumeration (`LayerType`) with values `none`,
+       `mixedContent`, `generalMapData`, `intersectionData`, `curveData`,
+       `roadwaySectionData`, `parkingAreaData`, and `sharedLaneData`; the
+       enumeration permits additional values through its extension marker
+       (`...`)
      * `layerID`: optional integer (`LayerID`)
      * `intersections`: optional list of intersection geometries
        (`IntersectionGeometryList`)
@@ -246,20 +242,69 @@ MAP Functionality:
 3. As seen above, the `dataParameters` and `restrictionList` are not being
    supported. This project also is focused the intersection aspect of the MAP
    messages. Due to this, all fields specifying road segments (`roadSegments`
-   and subfields) are not being implemnted at this time.
+   and subfields) are not being implemnted at this time.<br>
 
-4. Unlike SPaT messages, MAP messages will not be generated in batches. For the
+4. Since this generator is focused on intersections, Layer Type will default to
+   `intersectionData`. However, the value can be changed via the input JSON5.
+
+5. Since only one MAP message at a time is being generated, Layer ID will always
+   be equal to zero.<br>
+
+6. Unlike SPaT messages, MAP messages will not be generated in batches. For the
    current static-map implementation, the top-level `msgIssueRevision` value
    shall remain at zero.
 
-5. Each generated `IntersectionGeometry` shall include:
+7. Each generated `IntersectionGeometry` shall follow the J2735 field order:
 
-   * `id`: an `IntersectionReferenceID` with an `IntersectionID`; the optional
-     `region` value is omitted in the initial local-project profile
-   * `revision`: a `MsgCount` integer from 0 through 127
-   * `refPoint`: a `Position3D` containing latitude, longitude, and optional
-     elevation
-   * `laneSet`: one or more `GenericLane` records
+   * `name`: optional `DescriptiveName`, for debug use only
+   * `id`: required `IntersectionReferenceID`, consisting of a region ID and
+     intersection ID assignment as a globally unique value; this project omits
+     the optional `region` component in its initial profile
+   * `revision`: required `MsgCount` from 0 through 127
+   * `refPoint`: required `Position3D` providing the reference point from which
+     subsequent data points are offset until another point is specified
+   * `laneWidth`: optional `LaneWidth` used as the reference width for
+     subsequent lanes until another width is specified
+   * `speedLimits`: optional `SpeedLimitList` providing regulatory speed limits
+     for subsequent lanes until another speed is specified; speed values in mph
+     shall be converted to m/s as specified by J2735
+   * `laneSet`: required `LaneList` containing data for one or more lanes
+   * `preemptPriorityData`: optional `PreemptPriorityList` describing supported
+     preemption or priority zones
+   * `regional`: optional sequence of 1 through 4 regional extensions
+     (`RegionalExtension`)
+   * `...`: extension point for additional standard fields
+   * `roadAuthorityID`: optional `RoadAuthorityID`; mandatory when
+     `roadRegulatorID` is set to 0
+
+   Optional fields may be omitted when not supplied. The required `id`,
+   `revision`, `refPoint`, and `laneSet` fields shall be present.
+
+8. The MAP format allows for sending multiple intersections' geometry data at
+   once. However, this implementation will only allow for one intersection's
+   geometry information to be sent per MAP message. Meaning, a new MAP will have
+   to be generated for each intersection.
+
+9. For the MAP Intersection Geometry field, the name and intersection reference
+   ID shall shared with the SPAT message.
+
+10. Similarly to the top level MAP message, the message count will always be set
+    to zero since only one MAP is being generated. 
+
+11. Referece point shall require a longitude and latitude in 1/10th microdegrees
+    ranging from -1799999999 to 1800000001. This corresponds to -180 degrees to
+    +180 degrees and is the most important section of the MAP message.
+
+12. Elevation is an optional field that requires an integer ranging from -4096
+    to 61439. This is in 10cm steps meaning this range is from -409.5m to
+    6143.9m. If this field is not supplied by the input JSON5, it is just
+    omitted from the message.
+
+13. Lane width shall have a default integer value of 366cm (12ft which is
+    typical for highways). The input JSON5 can accept either a different integer
+    value in cenimeters from 0 to 32767 or false to omit it from the message.
+
+14. Speed limits shall be omitted from the message.<br>
 
 SPaT Debugging Decoding:
 ------------------------
