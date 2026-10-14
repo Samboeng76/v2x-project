@@ -1,0 +1,38 @@
+{
+  includeTimestamps: true,
+  // Shared by MAP and SPaT when both are generated.
+
+  intersection: {
+    id: 42,
+    name: "Sample Intersection"
+  },
+
+  // MAP and SPaT data are independent, with signalGroup values linking them.
+  // Replace the placeholder with lanes and lane connections once that schema
+  // is defined.
+  map: {},
+
+  spat: {
+    // Omit this field to use the default 0.1-second interval.
+    messageInterval: 0.1,
+
+    movements: [
+      {
+        name: "Northbound Through",
+        signalGroup: 1,
+        phases: [
+          { phase: "protected-Movement-Allowed", duration: 10 },
+          { phase: "protected-clearance", duration: 5 }
+        ]
+      },
+      {
+        name: "Eastbound Through",
+        signalGroup: 3,
+        phases: [
+          { phase: "stop-And-Remain", duration: 10 },
+          { phase: "permissive-Movement-Allowed", duration: 5 }
+        ]
+      }
+    ]
+  }
+}

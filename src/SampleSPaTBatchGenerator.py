@@ -32,6 +32,16 @@ PHASES = {
     "caution-Conflicting-Traffic": 9,
 }
 
+# Stable project profile: signal groups identify movements, not phase states.
+SIGNAL_GROUPS = {
+    1: "Northbound through",
+    2: "Southbound through",
+    3: "Eastbound through",
+    4: "Westbound through",
+    5: "Northbound left turn",
+    6: "Southbound left turn",
+}
+
 
 def _positive_decimal(value: Any, label: str) -> Decimal:
     if isinstance(value, bool):
@@ -67,13 +77,14 @@ def _phase_code(phase: Any, where: str) -> int:
 
 
 def _prepare(config: dict[str, Any]) -> tuple[Decimal, list[list[dict[str, Any]]], int]:
-    if config.get("messageType") != "SPAT":
-        raise ValueError('messageType must be "SPAT"')
     if not isinstance(config.get("includeTimestamps"), bool):
         raise ValueError("includeTimestamps must be true or false")
 
+    spat_config = config.get("spat")
+    if not isinstance(spat_config, dict):
+        raise ValueError("spat must be an object")
     interval = _positive_decimal(
-        config.get("messageInterval", DEFAULT_INTERVAL), "messageInterval"
+        spat_config.get("messageInterval", DEFAULT_INTERVAL), "spat.messageInterval"
     )
     intersection = config.get("intersection")
     if not isinstance(intersection, dict):
@@ -86,16 +97,29 @@ def _prepare(config: dict[str, Any]) -> tuple[Decimal, list[list[dict[str, Any]]
     if not isinstance(intersection.get("name"), str):
         raise ValueError("intersection.name must be a string")
 
-    movements = config.get("movements")
+    movements = spat_config.get("movements")
     if not isinstance(movements, list) or not movements:
-        raise ValueError("movements must be a non-empty array")
+        raise ValueError("spat.movements must be a non-empty array")
 
     prepared: list[list[dict[str, Any]]] = []
     batch_ticks: int | None = None
     for movement_index, movement in enumerate(movements):
-        where = f"movements[{movement_index}]"
+        where = f"spat.movements[{movement_index}]"
         if not isinstance(movement, dict) or not isinstance(movement.get("name"), str):
             raise ValueError(f"{where}.name must be a string")
+        signal_group = movement.get("signalGroup")
+        if (
+            isinstance(signal_group, bool)
+            or not isinstance(signal_group, int)
+            or signal_group not in SIGNAL_GROUPS
+        ):
+            supported_groups = ", ".join(
+                f"{group}: {name}" for group, name in SIGNAL_GROUPS.items()
+            )
+            raise ValueError(
+                f"{where}.signalGroup must be one of the configured IDs: "
+                f"{supported_groups}"
+            )
         phases = movement.get("phases")
         if not isinstance(phases, list) or not phases:
             raise ValueError(f"{where}.phases must be a non-empty array")
@@ -107,7 +131,7 @@ def _prepare(config: dict[str, Any]) -> tuple[Decimal, list[list[dict[str, Any]]
             if not isinstance(phase_item, dict):
                 raise ValueError(f"{phase_where} must be an object")
             phase = phase_item.get("phase")
-            code = _phase_code(phase, phase_where)
+            _phase_code(phase, phase_where)
             duration = _positive_decimal(
                 phase_item.get("duration"), f"{phase_where}.duration"
             )
@@ -120,7 +144,7 @@ def _prepare(config: dict[str, Any]) -> tuple[Decimal, list[list[dict[str, Any]]
                 )
             end_tick += int(ticks)
             schedule.append(
-                {"end_tick": end_tick, "phase": phase, "signal_group": code}
+                {"end_tick": end_tick, "phase": phase}
             )
 
         if batch_ticks is None:
@@ -145,12 +169,14 @@ def generate_messages(
     start_time = start_time.astimezone(timezone.utc)
 
     intersection_config = config["intersection"]
+    spat_config = config["spat"]
+    movements = spat_config["movements"]
     include_timestamps = config["includeTimestamps"]
     for sample_tick in range(batch_ticks):
         elapsed = interval * sample_tick
         message_time = start_time + timedelta(seconds=float(elapsed))
         movement_states = []
-        for movement, schedule in zip(config["movements"], schedules):
+        for movement, schedule in zip(movements, schedules):
             active = next(item for item in schedule if sample_tick < item["end_tick"])
             phase_end = start_time + timedelta(
                 seconds=float(interval * active["end_tick"])
@@ -158,8 +184,8 @@ def generate_messages(
             movement_states.append(
                 {
                     "movementName": movement["name"],
-                    # Temporary rule from the specification: derive the ID from phase.
-                    "signalGroup": active["signal_group"],
+                    # Stable movement ID; independent of the active phase state.
+                    "signalGroup": movement["signalGroup"],
                     "state-time-speed": [
                         {
                             "eventState": active["phase"],

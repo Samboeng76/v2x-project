@@ -32,7 +32,7 @@ uv pip install ./src/j2735_202409
 Generate a SPaT batch from the sample configuration:
 
 ```sh
-uv run python src/SampleSPaTBatchGenerator.py inputFiles/SampleSPaT.json5 output/sample_spat.txt
+uv run python src/SampleSPaTBatchGenerator.py inputFiles/SampleIntersection.json5 output/sample_spat.txt
 ```
 
 Decode the generated messages and write their full decoded values to JSON:
@@ -47,10 +47,12 @@ JSON file.
 
 ## Sample configuration
 
-The input file [`inputFiles/SampleSPaT.json5`](inputFiles/SampleSPaT.json5)
-defines an intersection and a schedule of phases for each movement. It includes
-the message interval and whether timestamps should be included. Phase durations
-must be positive and align with the configured message interval.
+The input file [`inputFiles/SampleIntersection.json5`](inputFiles/SampleIntersection.json5)
+shows the unified configuration shape: shared intersection identity, separate
+MAP and SPaT sections, and stable signal-group references. MAP geometry is a
+placeholder while its input schema is being developed. The current SPaT batch
+generator reads the SPaT section; phase durations must be positive and align
+with the configured message interval.
 
 ## Project documentation
 
