@@ -7,10 +7,18 @@
     name: "Sample Intersection"
   },
 
-  // MAP and SPaT data are independent, with signalGroup values linking them.
-  // Replace the placeholder with lanes and lane connections once that schema
-  // is defined.
-  map: {},
+  // MAP geometry is generated from the initial four-way preset.
+  // Replace the illustrative reference point with surveyed coordinates.
+  map: {
+    layout: "fourWayNoLeftTurn",
+    refPoint: {
+      latitude: 38.9564590,
+      longitude: -77.1502970
+    },
+    laneWidthCm: 366,
+    intersectionHalfExtentM: 10,
+    approachExtentM: 30
+  },
 
   spat: {
     // Omit this field to use the default 0.1-second interval.

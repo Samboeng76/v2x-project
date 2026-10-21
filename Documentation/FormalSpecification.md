@@ -24,24 +24,47 @@
 
 The shared JSON5 configuration shall contain the following fields:
 
-| Field               | Type    | Requirement and purpose                                                                                                                                                           |
-| ------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `includeTimestamps` | Boolean | Optional; defaults to `true`. Controls timestamp fields in both message types.                                                                                                    |
-| `intersection`      | Object  | Shared intersection identity, containing an integer `id` and a string `name`.                                                                                                     |
-| `map`               | Object  | MAP-specific geometry, lanes, and lane connections. The detailed MAP input schema remains to be specified. A connection's `signalGroup`, when present, refers to a SPaT movement. |
-| `spat`              | Object  | SPaT movement definitions and SPaT-specific settings, described in §3.                                                                                                            |
+| Field               | Type    | Requirement and purpose                                                                                                                                                                              |
+| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `includeTimestamps` | Boolean | Optional; defaults to `true`. Controls timestamp fields in both message types.                                                                                                                       |
+| `intersection`      | Object  | Shared intersection identity, containing an integer `id` and a string `name`.                                                                                                                        |
+| `map`               | Object  | MAP-specific geometry, lanes, and lane connections. The initial layout and its input fields are defined in §2.1.1 and §4.4.1. A connection's `signalGroup`, when present, refers to a SPaT movement. |
+| `spat`              | Object  | SPaT movement definitions and SPaT-specific settings, described in §3.                                                                                                                               |
 
 The input shall not request or supply an intersection `region` value. The
 optional `region` component of `IntersectionReferenceID` shall be omitted.
 
+### 2.1.1 MAP input fields
+
+The initial MAP profile shall accept the following fields inside `map`:
+
+| Field                     | Type                                     | Requirement and purpose                                                                                                                                                                          |
+| ------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `layout`                  | String                                   | Required. The initial supported value is `fourWayNoLeftTurn`, defined in §4.4.1.                                                                                                                 |
+| `refPoint`                | Object                                   | Required. Contains `latitude` and `longitude` in decimal degrees using the WGS-84 datum. Optional `elevation` is in meters. The reference point is the center of the intersection layout.        |
+| `laneWidthCm`             | Integer from 1 through 32767, or `false` | Optional; defaults to 366 cm. Sets the lane width and the lateral lane-center offset. `false` omits the MAP `laneWidth` field while the layout still uses the default 366 cm width for geometry. |
+| `intersectionHalfExtentM` | Positive number                          | Optional; defaults to 10 m. Distance from the reference point to each straight lane segment's endpoint at the intersection boundary.                                                             |
+| `approachExtentM`         | Positive number                          | Optional; defaults to 30 m. Distance from the reference point to each lane segment's outer endpoint. Must be greater than `intersectionHalfExtentM`.                                             |
+| `layerType`               | String                                   | Optional; defaults to `intersectionData`. Supported values are the non-extension values listed in §4.1.                                                                                          |
+
+Latitude shall be within -90 to +90 degrees. Longitude shall be within
+-179.9999999 to +180 degrees, matching the representable non-sentinel range. The
+encoder shall convert each to J2735 1/10th-microdegree units by multiplying by
+10,000,000 and rounding to the nearest integer, with exact halfway cases rounded
+away from zero. Elevation, when supplied, shall be within the representable
+non-sentinel range of -409.5 m through 6143.9 m and shall be converted to 0.1 m
+units using the same rounding rule. The encoder shall reject out-of-range
+coordinates and geometry parameters that cannot be represented by the selected
+node-offset encoding.
+
 ### 2.2 MAP/SPaT consistency
 
-| Value or relationship | Requirement                                                                                                                                                                                                                                                                                                                                |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Intersection ID       | The same intersection ID shall be used by MAP and SPaT output for the same intersection.                                                                                                                                                                                                                                                   |
-| Signal-group IDs      | Signal-group IDs shall appear in SPaT movement definitions and corresponding MAP lane connections. The generator shall check that each ID used to link a MAP lane connection to a signalized movement is present in both sections. MAP and SPaT movement/lane data remain independently defined in their respective sections.              |
-| Timestamps            | MAP and SPaT timestamps shall use a common UTC time basis. For a SPaT batch, the shared start time shall be the MAP timestamp and the timestamp of the first SPaT sample. Subsequent SPaT timestamps shall advance by elapsed simulation time. When `includeTimestamps` is false, optional timestamps shall be omitted from both messages. |
-| Other revisions       | MAP geometry revision and SPaT message revision are independent counters.                                                                                                                                                                                                                                                                  |
+| Value or relationship | Requirement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Intersection ID       | The same intersection ID shall be used by MAP and SPaT output for the same intersection.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Signal-group IDs      | A signal group used by a MAP lane connection shall be present in the SPaT movements, and the generator shall check this relationship. In the `fourWayNoLeftTurn` layout, through groups 1 through 4 may be linked; signalized right turns and left-turn links are unsupported. When MAP and SPaT are generated together using this layout, the SPaT configuration shall not define movements for unsupported signalized turns. MAP and SPaT movement/lane data remain independently defined in their respective sections. |
+| Timestamps            | MAP and SPaT timestamps shall use a common UTC time basis. For a SPaT batch, the shared start time shall be the MAP timestamp and the timestamp of the first SPaT sample. Subsequent SPaT timestamps shall advance by elapsed simulation time. When `includeTimestamps` is false, optional timestamps shall be omitted from both messages.                                                                                                                                                                                |
+| Other revisions       | MAP geometry revision and SPaT message revision are independent counters.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 These are the cross-message values required to agree in the initial profile.
 
@@ -130,10 +153,6 @@ Not every phase applies to every region or operating mode. Additional SPaT
 fields defined by the applicable SAE J2735 ASN.1 specification shall be
 evaluated for inclusion as implementation expands.
 
-> **Open detail:** The phase schedule shall allow simplified names with `green`
-> corresponding to phase 6, `red` to phase 3, and `yellow` to phase 8. This
-> mapping is marked for verification in the source specification.
-
 ### 3.5 Batch generation
 
 The generator shall support batch output to a text file, with one hex-encoded
@@ -183,7 +202,12 @@ a 16-bit all-zero bit string.
   },
 
   map: {
-    // MAP lanes and lane connections are defined here.
+    layout: "fourWayNoLeftTurn",
+    // Illustrative coordinates; replace with the surveyed intersection center.
+    refPoint: { latitude: 38.9564590, longitude: -77.1502970 },
+    laneWidthCm: 366,
+    intersectionHalfExtentM: 10,
+    approachExtentM: 30
   },
 
   spat: {
@@ -210,17 +234,17 @@ a 16-bit all-zero bit string.
 The system shall convert the completed `MapData` value to UPER-encoded bytes.
 The top-level `MapData` fields are:
 
-| Field              | ASN.1 type and constraints          | Requirement                                                                                                                                                                                                                                                                                                    |
-| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `timeStamp`        | Optional `MinuteOfTheYear` integer  | Populated when timestamps are enabled.                                                                                                                                                                                                                                                                         |
-| `msgIssueRevision` | `MsgCount`, 0 through 127           | Required; remains zero for the current static-map implementation.                                                                                                                                                                                                                                              |
-| `layerType`        | Optional `LayerType` enumeration    | Defaults to `intersectionData`; may be changed through JSON5. Defined values include `none`, `mixedContent`, `generalMapData`, `intersectionData`, `curveData`, `roadwaySectionData`, `parkingAreaData`, and `sharedLaneData`; the enumeration permits additional values through its extension marker (`...`). |
-| `layerID`          | Optional `LayerID` integer          | Always zero because only one MAP message at a time is generated.                                                                                                                                                                                                                                               |
-| `intersections`    | Optional `IntersectionGeometryList` | Contains the intersection geometry. This implementation supports one intersection per MAP message.                                                                                                                                                                                                             |
-| `regional`         | Optional `RegionalExtension` list   | Optional.                                                                                                                                                                                                                                                                                                      |
-| `roadSegments`     | Optional `RoadSegmentList`          | Not supported. Road-segment fields and subfields are not being implemented at this time.                                                                                                                                                                                                                       |
-| `dataParameters`   | Optional `DataParameters`           | Not supported.                                                                                                                                                                                                                                                                                                 |
-| `restrictionList`  | Optional `RestrictionClassList`     | Not supported.                                                                                                                                                                                                                                                                                                 |
+| Field              | ASN.1 type and constraints          | Requirement                                                                                                                                                                                                                                                                                             |
+| ------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `timeStamp`        | Optional `MinuteOfTheYear` integer  | Populated when timestamps are enabled.                                                                                                                                                                                                                                                                  |
+| `msgIssueRevision` | `MsgCount`, 0 through 127           | Required; remains zero for the current static-map implementation.                                                                                                                                                                                                                                       |
+| `layerType`        | Optional `LayerType` enumeration    | Defaults to `intersectionData`; may be changed through `map.layerType`. Supported values are `none`, `mixedContent`, `generalMapData`, `intersectionData`, `curveData`, `roadwaySectionData`, `parkingAreaData`, and `sharedLaneData`. ASN.1 extension values are not supported by the initial profile. |
+| `layerID`          | Optional `LayerID` integer          | Always zero because only one MAP message at a time is generated.                                                                                                                                                                                                                                        |
+| `intersections`    | Optional `IntersectionGeometryList` | ASN.1-optional, but required by this profile and contains exactly one `IntersectionGeometry`.                                                                                                                                                                                                           |
+| `regional`         | Optional `RegionalExtension` list   | Optional.                                                                                                                                                                                                                                                                                               |
+| `roadSegments`     | Optional `RoadSegmentList`          | Not supported. Road-segment fields and subfields are not being implemented at this time.                                                                                                                                                                                                                |
+| `dataParameters`   | Optional `DataParameters`           | Not supported.                                                                                                                                                                                                                                                                                          |
+| `restrictionList`  | Optional `RestrictionClassList`     | Not supported.                                                                                                                                                                                                                                                                                          |
 
 MAP messages are not generated in batches. For the current static-map
 implementation, top-level `msgIssueRevision` shall remain zero.
@@ -229,19 +253,19 @@ implementation, top-level `msgIssueRevision` shall remain zero.
 
 Each generated `IntersectionGeometry` shall follow the J2735 field order:
 
-| Field                 | ASN.1 type and constraints          | Requirement                                                                                                                                                                                                                                                                                           |
-| --------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                | Optional `DescriptiveName`          | Optional; for debug use only.                                                                                                                                                                                                                                                                         |
-| `id`                  | Required `IntersectionReferenceID`  | Consists of a region ID and intersection ID assignment as a globally unique value; the initial project profile omits the optional `region` component. The name and intersection reference ID shall be shared with the SPaT message.                                                                   |
-| `revision`            | Required `MsgCount`, 0 through 127  | Required; the message count remains zero for the current implementation, which generates one MAP at a time.                                                                                                                                                                                           |
-| `refPoint`            | Required `Position3D`               | Reference point from which subsequent data points are offset until another point is specified. Requires longitude and latitude in 1/10th microdegrees, ranging from -1799999999 to 1800000001. This corresponds to -180 degrees to +180 degrees and is the most important section of the MAP message. |
-| `laneWidth`           | Optional `LaneWidth`                | Reference width for subsequent lanes until another width is specified. Defaults to 366 cm (12 ft, typical for highways). JSON5 may provide an integer number of centimeters from 0 through 32767, or `false` to omit it.                                                                              |
-| `speedLimits`         | Optional `SpeedLimitList`           | Speed limits are omitted from the message. If supported later, speed values in mph shall be converted to m/s as specified by J2735.                                                                                                                                                                   |
-| `laneSet`             | Required `LaneList`                 | Contains data for one or more lanes.                                                                                                                                                                                                                                                                  |
-| `preemptPriorityData` | Optional `PreemptPriorityList`      | Describes supported preemption or priority zones.                                                                                                                                                                                                                                                     |
-| `regional`            | Optional 1-to-4 regional extensions | `RegionalExtension` sequence.                                                                                                                                                                                                                                                                         |
-| `...`                 | Extension point                     | Additional standard fields.                                                                                                                                                                                                                                                                           |
-| `roadAuthorityID`     | Optional `RoadAuthorityID`          | Mandatory when `roadRegulatorID` is set to 0.                                                                                                                                                                                                                                                         |
+| Field                 | ASN.1 type and constraints          | Requirement                                                                                                                                                                                                                                                               |
+| --------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                | Optional `DescriptiveName`          | Optional; for debug use only.                                                                                                                                                                                                                                             |
+| `id`                  | Required `IntersectionReferenceID`  | Uses the shared intersection ID. The initial project profile omits the optional `region` component, so uniqueness is limited to the deployment context that assigns the ID. The name and intersection reference ID shall be shared with the SPaT message.                 |
+| `revision`            | Required `MsgCount`, 0 through 127  | Required; the message count remains zero for the current implementation, which generates one MAP at a time.                                                                                                                                                               |
+| `refPoint`            | Required `Position3D`               | Reference point from which subsequent data points are offset until another point is specified. JSON5 supplies decimal-degree latitude and longitude, plus optional elevation in meters, through `map.refPoint`; §2.1.1 defines conversion and valid input ranges.         |
+| `laneWidth`           | Optional `LaneWidth`                | Reference width for subsequent lanes until another width is specified. Defaults to 366 cm. JSON5 may provide a positive integer number of centimeters through `map.laneWidthCm`, or `false` to omit it. When omitted, the layout uses the default width for its geometry. |
+| `speedLimits`         | Optional `SpeedLimitList`           | Speed limits are omitted from the message. If supported later, speed values in mph shall be converted to m/s as specified by J2735.                                                                                                                                       |
+| `laneSet`             | Required `LaneList`                 | Contains data for one or more lanes.                                                                                                                                                                                                                                      |
+| `preemptPriorityData` | Optional `PreemptPriorityList`      | Describes supported preemption or priority zones.                                                                                                                                                                                                                         |
+| `regional`            | Optional 1-to-4 regional extensions | `RegionalExtension` sequence.                                                                                                                                                                                                                                             |
+| `...`                 | Extension point                     | Additional standard fields.                                                                                                                                                                                                                                               |
+| `roadAuthorityID`     | Optional `RoadAuthorityID`          | Mandatory when `roadRegulatorID` is set to 0.                                                                                                                                                                                                                             |
 
 Optional fields may be omitted when not supplied. The required `id`, `revision`,
 `refPoint`, and `laneSet` fields shall be present.
@@ -250,8 +274,8 @@ Optional fields may be omitted when not supplied. The required `id`, `revision`,
 
 | Item               | Requirement                                                                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Intersection count | Although MAP supports multiple intersection geometries, this implementation shall include only one intersection's geometry per MAP message. Generate a separate MAP for each intersection.     |
-| Elevation          | Optional integer from -4096 through 61439 in 10 cm steps, corresponding to -409.5 m through 6143.9 m. Omit it when not supplied in JSON5.                                                      |
+| Intersection count | The initial profile shall include exactly one intersection geometry per MAP message.                                                                                                           |
+| Elevation          | Optional JSON5 input in meters, converted to J2735 0.1 m units. Omit it when not supplied. The `-4096` ASN.1 value is reserved as unavailable and shall not be used for a supplied elevation.  |
 | Speed limits       | Omitted from the message.                                                                                                                                                                      |
 | MAP revisions      | Top-level message revision and intersection geometry revision remain zero for the current static-map implementation. MAP geometry revision and SPaT message revision are independent counters. |
 
@@ -274,70 +298,114 @@ fields in ASN.1 order:
 | `regional`        | Optional sequence of 1 to 4 `RegionalExtension` values | Regional extensions constrained by `Reg-GenericLane`.                                                                                                                      |
 | `...`             | ASN.1 extension point                                  | Allows extension additions.                                                                                                                                                |
 
-Rather than requiring MAP lane info to manually specified for every field,
-several preset lane layouts will be provided which can be selected when encoding
-a message. The sections below detail necessary configurations for various
-intersection layouts.
+The initial profile generates lane information from a named layout and its
+geometry parameters. Additional layouts may be defined later.
 
-### 4.4.1 Basic Four Way Intersection w/o Left Turn
+### 4.4.1 Four-way, single-lane, no-left-turn layout
 
-This table displays the configuration to be used with a basic four way
-intersection. Any optional fields not included, are being omitted. A basic four
-way will consist of eight lanes.
+The `fourWayNoLeftTurn` layout has one ingress lane and one egress lane on each
+cardinal approach, for eight `GenericLane` records. It allows through and right
+turn connections and has no left-turn connections. Right turns are unsignalized
+in the initial profile. This describes movement connectivity; right-turn curves
+through the intersection box are not separately encoded.
 
-<table
-  style="border-collapse: collapse; width: 97.5949%; border-width: 1px; border-style: dotted;"
-  border="1"
->
-  <colgroup>
-    <col style="width: 49.9352%;">
-    <col style="width: 49.9352%;">
-  </colgroup>
-  <tbody>
-    <tr>
-      <td><strong>ASN.1 Field</strong><br></td>
-      <td><strong>Value</strong><br></td>
-    </tr>
-    <tr>
-      <td><code>laneID</code><br></td>
-      <td>
-        Lane ID will be assigned starting from zero in the order of created lanes for the intersection.
-      </td>
-    </tr>
-    <tr>
-      <td><code>LaneAttributes.directionalUse</code><br></td>
-      <td>
-        Directional use is a bitstring of size 2, where bit 0 represents an ingressPath and bit 1 represents an egressPath. All lanes approaching the intersection will be defined as ingress and all lanes leaving will be defined as egress.
-      </td>
-    </tr>
-    <tr>
-      <td><code>LaneAttributes.sharedWith</code></td>
-      <td>
-        Shared with is a bitstring of size 10 where each bit represents a different sharing option. For this application, all bits will be set to zero indicating no lane sharing.
-      </td>
-    </tr>
-    <tr>
-      <td><code>LaneAttributes.laneType</code></td>
-      <td>
-        Lane type is a choice. For this application all lanes used will be selected as vehicles. Once a type is chosen, a bitstring of size 8 is used to select attributes. For a standard intersection, all bits will be zero.
-      </td>
-    </tr>
-    <tr>
-      <td><code>manuevers</code><br></td>
-      <td>Future Work</td>
-    </tr>
-    <tr>
-      <td><code>nodeList</code><br></td>
-      <td>
-        Node list provides spatial information for all lane approaches. Due to complexity, a standardized approach is used for all intersections. This is expanded upon in a later section.
-      </td>
-    </tr>
-    <tr>
-      <td><code>connectsTo</code><br></td>
-      <td>Future Work</td>
-    </tr>
-  </tbody>
-</table>
+Approach IDs are fixed as north = 1, east = 2, south = 3, and west = 4. Lane IDs
+are fixed in compass order, with the ingress lane followed by the egress lane on
+each approach:
+
+| Lane ID | Lane          | Travel direction | Approach field       | Centerline path in local east/north coordinates |
+| ------- | ------------- | ---------------- | -------------------- | ----------------------------------------------- |
+| 1       | North ingress | South            | `ingressApproach: 1` | `x = -w/2`, from `y = +A` to `y = +H`           |
+| 2       | North egress  | North            | `egressApproach: 1`  | `x = +w/2`, from `y = +H` to `y = +A`           |
+| 3       | East ingress  | West             | `ingressApproach: 2` | `y = +w/2`, from `x = +A` to `x = +H`           |
+| 4       | East egress   | East             | `egressApproach: 2`  | `y = -w/2`, from `x = +H` to `x = +A`           |
+| 5       | South ingress | North            | `ingressApproach: 3` | `x = +w/2`, from `y = -A` to `y = -H`           |
+| 6       | South egress  | South            | `egressApproach: 3`  | `x = -w/2`, from `y = -H` to `y = -A`           |
+| 7       | West ingress  | East             | `ingressApproach: 4` | `y = -w/2`, from `x = -A` to `x = -H`           |
+| 8       | West egress   | West             | `egressApproach: 4`  | `y = +w/2`, from `x = -H` to `x = -A`           |
+
+Here `w` is the configured lane width in meters (3.66 m when omitted), `H` is
+`intersectionHalfExtentM` (10 m by default), and `A` is `approachExtentM` (30 m
+by default). `A` shall be greater than `H`. Each lane has two nodes at the
+listed endpoints. Lane IDs 1 through 8 are stable project assignments and are
+unique within this intersection.
+
+All lanes use the vehicle `laneType` choice with its eight-bit attribute string
+set to zero, and a ten-bit `sharedWith` string set to zero. Ingress lanes set
+the `ingressPath` directional-use bit; egress lanes set the `egressPath` bit.
+Ingress lanes permit straight. The encoder shall omit left-turn maneuvers and
+connections.
+
+The required initial connections are:
+
+| Ingress lane | Destination lane | Maneuver | `signalGroup`          |
+| ------------ | ---------------- | -------- | ---------------------- |
+| 1            | 6                | Through  | 2 (southbound through) |
+| 3            | 8                | Through  | 4 (westbound through)  |
+| 5            | 2                | Through  | 1 (northbound through) |
+| 7            | 4                | Through  | 3 (eastbound through)  |
+
+Each connection shall reference an existing egress lane. Through-connection
+signal groups shall also be defined in the SPaT movements, as required by §2.2.
+The `connectingLane.maneuver` and ingress lane `maneuvers` fields shall
+identify the listed straight and right movements using the corresponding J2735
+`AllowedManeuvers` bits.
+
+### 4.5 Node List<br>
+
+The initial profile uses a two-node straight centerline for each approach and
+egress lane. Each lane has its own node list describing its centerline. All lane
+node lists use the same intersection reference point; the first node is relative
+to that point, and each later node is relative to the previous node in that
+lane. Other lane geometries may be added later.
+
+The `nodeList` attribute consists of a choice between a `nodes` option, which
+encodes points using XY offsets, and a `computed` option, which uses other lane
+information. This implementation will use the `nodes` option.
+
+`nodes` is a sequence of 2 to 63 `NodeXY` values. For the four-way layout, the
+encoder shall use two nodes per lane at the endpoints listed in §4.4.1, ordered
+in the direction of travel.
+
+Each `NodeXY` has a `delta` field and an optional `attributes` field. This
+implementation will omit `attributes` and use only `delta`.
+
+Each `delta` is represented as a NodeOffsetPointXY choice using ASN.1. This
+implementation will use `node-XY4` (Node-XY-26b). This corresponds with a 26 bit
+node type, which supports offsets for nodes up to 40.96 m from the previous
+point. Offsets use 1 cm units and can be positive or negative.
+
+#### 4.5.1 Calculating lane offsets
+
+The layout preset determines the start and end points of each lane centerline,
+including the lateral position of each lane. The encoder converts those points
+to offsets; users do not enter every encoded offset manually. Each lane is
+calculated independently, and all lanes are positioned relative to the shared
+intersection reference point. Geometry parameters shall be rejected if any
+resulting offset cannot be represented by the selected `node-XY4` encoding.
+
+For calculation, represent each desired point as an east-west coordinate `east`
+and a north-south coordinate `north`, in meters relative to the intersection
+reference point. Positive `east` is east and positive `north` is north. For the
+first node, the previous point is the intersection reference point (0, 0). For
+each later node, the previous point is the preceding node in the same lane. The
+encoded values are:
+
+```text
+x = round(100 × (east_current − east_previous))
+y = round(100 × (north_current − north_previous))
+```
+
+The factor of 100 converts meters to centimeters. Round to the nearest
+centimeter, with exact halfway cases rounded away from zero. For example, a lane
+whose first node is 5 m west and 1 m south of the intersection reference point
+has `x = -500` and `y = -100`. If its next node is 10 m east and 1 m south of
+the reference point, that node is encoded as `x = +1500` and `y = 0`, because
+its offset is measured from the first node. Each adjacent lane has its own
+points and offsets, even though the lanes share the same intersection reference
+point.
+
+<p><br></p>
 
 5\. SPaT debugging decoder
 --------------------------
