@@ -1,7 +1,7 @@
 [project]
 name = "v2x-project"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generate and inspect SAE J2735 MAP and SPaT messages"
 readme = "README.md"
 authors = [
     { name = "Sam English", email = "sbe80@msstate.edu" }

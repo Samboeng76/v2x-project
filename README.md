@@ -1,9 +1,8 @@
 # V2X Message Generator
 
-A work-in-progress Python project for generating and inspecting SAE J2735
-messages. The current runnable example creates a timed batch of SPaT messages
-from a JSON5 configuration, encodes them as UPER hexadecimal, and can decode
-the result for inspection. MAP generation is still part of the project plan.
+A Python command-line tool for generating SAE J2735 MAP and SPaT messages from
+one JSON5 intersection configuration and decoding raw SPaT messages for
+inspection. Generated messages use UPER and are written as hexadecimal text.
 
 ## Quick start
 
@@ -22,54 +21,70 @@ If you already cloned without submodules, initialize them with:
 git submodule update --init --recursive
 ```
 
-Install the Python dependencies and the local J2735 package:
+Install dependencies and the local J2735 package:
 
 ```sh
 uv sync
 uv pip install ./src/j2735_202409
 ```
 
-Generate a SPaT batch from the sample configuration:
+Generate a MAP message:
 
 ```sh
-uv run python src/SampleSPaTBatchGenerator.py inputFiles/SampleIntersection.json5 output/sample_spat.txt
+uv run v2x-project map inputFiles/SampleIntersection.json5 output/sample_map.txt
 ```
 
-Decode the generated messages and write their full decoded values to JSON:
+Generate a SPaT batch:
 
 ```sh
-uv run python src/SPaTDecoder.py output/sample_spat.txt --json-output output/sample_spat_decoded.json
+uv run v2x-project spat inputFiles/SampleIntersection.json5 output/sample_spat.txt
 ```
 
-The generator writes one hexadecimal UPER message per line. The decoder prints
-a summary for each valid message and writes the decoded data to the requested
-JSON file.
+Generate both from the same UTC start time:
+
+```sh
+uv run v2x-project both inputFiles/SampleIntersection.json5 --map-output output/sample_map.txt --spat-output output/sample_spat.txt
+```
+
+Decode the SPaT batch and save the complete decoded values as JSON:
+
+```sh
+uv run v2x-project decode output/sample_spat.txt --json-output output/sample_spat_decoded.json
+```
+
+The MAP command writes one hexadecimal UPER message. The SPaT command writes
+one message per sample time, with one hexadecimal UPER message per line. Use
+`uv run v2x-project --help` for command details.
 
 ## Sample configuration
 
-The input file [`inputFiles/SampleIntersection.json5`](inputFiles/SampleIntersection.json5)
-shows the unified configuration shape: shared intersection identity, separate
-MAP and SPaT sections, and stable signal-group references. MAP geometry is a
-placeholder while its input schema is being developed. The current SPaT batch
-generator reads the SPaT section; phase durations must be positive and align
-with the configured message interval.
+[`inputFiles/SampleIntersection.json5`](inputFiles/SampleIntersection.json5)
+shows the unified configuration shape: shared intersection identity and
+separate MAP and SPaT sections. The initial MAP profile is a four-way,
+single-lane layout without left turns. It includes unsignalized right-turn
+connectivity and signalized through connections. SPaT phase durations must be
+positive, align with the configured message interval, and have matching totals
+for all movements.
+
+The implementation accepts message intervals of at least 0.1 seconds in
+millisecond increments. `minEndTime` is rounded to the nearest tenth of a
+second, with halfway values rounded up, and is encoded as time within its UTC
+hour. The decoder reports the day of year and UTC clock time because J2735
+`MinuteOfTheYear` does not contain a calendar year.
 
 ## Project documentation
 
 - [Proposal](Documentation/Proposal.md): project purpose and intended design.
-- [Formal specification](Documentation/FormalSpecification.md): current
-  requirements and open details.
+- [Formal specification](Documentation/FormalSpecification.md): requirements
+  for the initial profile.
 - [Ideas and considerations](Documentation/IdeasAndConsiderations.md): design
   options and possible future work.
 - [SPaT ASN.1 notes](Documentation/SPaT_ASN1.md): notes on the message
   structure.
-- [MAP ASN.1 notes](Documentation/MAP_ASN1.md): notes on the message
-  structure.
+- [MAP ASN.1 notes](Documentation/MAP_ASN1.md): notes on the message structure.
 - [Project contents](toc.md): documentation, sample inputs, and source files.
 
-## Current scope
-
-The command-line scripts under `src/` are the working entry points. The
-`v2x-project` package command is currently a placeholder. The J2735 ASN.1
-definitions are provided by the `src/j2735_202409` Git submodule; keep that
-submodule initialized when setting up a fresh checkout.
+The `v2x-project` command provides `map`, `spat`, `both`, and `decode`
+operations. J2735 ASN.1 definitions are provided by the
+`src/j2735_202409` Git submodule; keep it initialized when setting up a fresh
+checkout.

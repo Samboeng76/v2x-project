@@ -1,9 +1,9 @@
-﻿Formal Specification
-====================
+﻿uFormal Specification
+=====================
 
-> **Draft status:** This specification is evolving alongside the prototype.
-> Items marked as future work, open details, or requiring evaluation are not
-> settled requirements.
+> <strong>Draft status:</strong> This specification is evolving alongside the
+> prototype. Items marked as future work, open details, or requiring evaluation
+> are not settled requirements.
 
 1\. System requirements
 -----------------------
@@ -347,8 +347,8 @@ The required initial connections are:
 
 Each connection shall reference an existing egress lane. Through-connection
 signal groups shall also be defined in the SPaT movements, as required by §2.2.
-The `connectingLane.maneuver` and ingress lane `maneuvers` fields shall
-identify the listed straight and right movements using the corresponding J2735
+The `connectingLane.maneuver` and ingress lane `maneuvers` fields shall identify
+the listed straight and right movements using the corresponding J2735
 `AllowedManeuvers` bits.
 
 ### 4.5 Node List<br>
@@ -426,7 +426,37 @@ encoded using UPER.
 
 This decoder is primarily for debugging at this stage.
 
-6\. Implementation notes
+6\. Error Handling and User Friendliness
+----------------------------------------
+
+The requirements in this section apply to the message generators and the SPaT
+decoder. Where §5 defines more specific decoder behavior, §5 takes precedence.
+
+### 6.1 Input validation and diagnostics
+
+| ID    | Requirement                                                                                                                                                                                                                                       |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ERR-1 | Before generating output, validate the JSON5 syntax, document shape, required fields, field types and ranges, supported values, timing constraints, and applicable MAP/SPaT relationships. Do not begin message generation when validation fails. |
+| ERR-2 | For a configuration error, identify the input file and the relevant JSON field path whenever available (for example, `spat.movements[1].phases[0].duration`). For a JSON5 syntax error, report the line and column when the parser provides them. |
+| ERR-3 | Explain what is invalid and what kind of value is expected. User-facing diagnostics shall use configuration and command-line terms rather than requiring users to interpret ASN.1 or PyCrate internals.                                           |
+| ERR-4 | Apply a documented default only when its field is omitted. A present field with an invalid type or value shall be reported as an error; it shall not be silently coerced, clamped, or replaced with a default.                                    |
+| ERR-5 | For expected input, decoding, and file-access errors, print a concise diagnostic and exit with a nonzero status. Do not print a Python traceback for these errors.                                                                                |
+
+### 6.2 Command-line and output behavior
+
+| ID    | Requirement                                                                                                                                                                                                                                                                                                                         |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ERR-6 | Each command-line entry point shall provide `--help` output describing its inputs, outputs, and available options.                                                                                                                                                                                                                  |
+| ERR-7 | File-access diagnostics shall identify the affected path and whether the operation was reading input or writing output. A success message shall be printed only after the requested output has been written successfully.                                                                                                           |
+| ERR-8 | The generator shall validate the configuration before creating or truncating its destination file. It shall write generated output to a temporary file and replace the requested destination only after generation and writing succeed. On failure, it shall exit with a nonzero status and preserve any existing destination file. |
+| ERR-9 | The generator shall make its destination-file overwrite behavior clear and shall not require interactive confirmation, so it can be used in scripts. The decoder's JSON overwrite and partial-decode behavior is specified in §5.                                                                                                   |
+
+The terminal output shall remain readable when a file contains multiple
+messages. Decoder summaries and per-line error reporting are specified in §5.
+The command-line tools do not require a graphical interface in the initial
+profile.
+
+7\. Implementation notes
 ------------------------
 
 The provided USDOT library can be imported as:
@@ -460,7 +490,7 @@ SPAT.IntersectionState.set_val({
 })
 ```
 
-7\. Development tools and libraries
+8\. Development tools and libraries
 -----------------------------------
 
 | Purpose                              | Tool                                                                                    |

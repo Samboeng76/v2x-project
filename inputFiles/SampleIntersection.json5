@@ -40,6 +40,22 @@
           { phase: "stop-And-Remain", duration: 10 },
           { phase: "permissive-Movement-Allowed", duration: 5 }
         ]
+      },
+      {
+        name: "Southbound Through",
+        signalGroup: 2,
+        phases: [
+          { phase: "stop-And-Remain", duration: 10 },
+          { phase: "protected-Movement-Allowed", duration: 5 }
+        ]
+      },
+      {
+        name: "Westbound Through",
+        signalGroup: 4,
+        phases: [
+          { phase: "protected-Movement-Allowed", duration: 10 },
+          { phase: "protected-clearance", duration: 5 }
+        ]
       }
     ]
   }

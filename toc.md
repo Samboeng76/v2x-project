@@ -10,5 +10,4 @@ V2X Message Generator
 2. Input Files
    1. [Sample Intersection JSON5](inputFiles/SampleIntersection.json5)
 3. Source Files
-   1. [SPaT Batch Generator](src/SampleSPaTBatchGenerator.py)
-   2. [SPaT Decoder](src/SPaTDecoder.py)
+   1. [V2X command-line package](src/v2x_project/)
