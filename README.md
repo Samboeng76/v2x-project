@@ -1,7 +1,7 @@
 # V2X Message Generator
 
 A Python command-line tool for generating SAE J2735 MAP and SPaT messages from
-one JSON5 intersection configuration and decoding raw SPaT messages for
+one JSON5 intersection configuration and decoding raw MAP and SPaT messages for
 inspection. Generated messages use UPER and are written as hexadecimal text.
 
 ## Quick start
@@ -51,6 +51,16 @@ Decode the SPaT batch and save the complete decoded values as JSON:
 ```sh
 uv run v2x-project decode output/sample_spat.txt --json-output output/sample_spat_decoded.json
 ```
+
+Decode a MAP message to JSON without terminal output:
+
+```sh
+uv run v2x-project decode output/sample_map.txt --message-type map --json-output output/sample_map_decoded.json
+```
+
+Both decoders accept a hexadecimal message or a file with one message per line.
+SPaT is the default message type. MAP decoding writes an array of successfully
+decoded messages to JSON and uses a nonzero exit status if any message fails.
 
 The MAP command writes one hexadecimal UPER message. The SPaT command writes
 one message per sample time, with one hexadecimal UPER message per line. Use

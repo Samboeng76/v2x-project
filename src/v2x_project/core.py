@@ -1,4 +1,4 @@
-"""Configuration validation and J2735 MAP/SPaT message construction."""
+"""Configuration validation and J2735 MAP/SPaT message encoding and decoding."""
 
 from __future__ import annotations
 
@@ -674,15 +674,19 @@ def generate_spat_messages(
             ) from None
 
 
-def decode_spat(hex_text: str) -> dict[str, Any]:
-    """Decode a raw hexadecimal J2735 SPAT UPER message."""
+def _hex_message_bytes(hex_text: str) -> bytes:
     compact = "".join(hex_text.split())
     if not compact:
         raise UserInputError("message contains no hexadecimal data")
     try:
-        encoded = bytes.fromhex(compact)
+        return bytes.fromhex(compact)
     except ValueError as error:
         raise UserInputError(f"invalid hexadecimal message: {error}") from None
+
+
+def decode_spat(hex_text: str) -> dict[str, Any]:
+    """Decode a raw hexadecimal J2735 SPAT UPER message."""
+    encoded = _hex_message_bytes(hex_text)
     try:
         j2735.SPAT.SPAT.from_uper(encoded)
         decoded = j2735.SPAT.SPAT.get_val()
@@ -692,4 +696,21 @@ def decode_spat(hex_text: str) -> dict[str, Any]:
         ) from None
     if not isinstance(decoded, dict) or not isinstance(decoded.get("intersections"), list):
         raise UserInputError("decoded value is not a top-level J2735 SPAT frame")
+    return decoded
+
+
+def decode_map(hex_text: str) -> dict[str, Any]:
+    """Decode a raw hexadecimal J2735 MapData UPER message."""
+    encoded = _hex_message_bytes(hex_text)
+    try:
+        j2735.MapData.MapData.from_uper(encoded)
+        decoded = j2735.MapData.MapData.get_val()
+    except Exception:  # noqa: BLE001 - PyCrate can raise several decode errors.
+        raise UserInputError(
+            "cannot decode message as a raw J2735 MapData UPER frame"
+        ) from None
+    if not isinstance(decoded, dict) or not isinstance(
+        decoded.get("intersections"), list
+    ):
+        raise UserInputError("decoded value is not a top-level J2735 MapData frame")
     return decoded

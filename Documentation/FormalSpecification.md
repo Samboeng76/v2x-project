@@ -1,5 +1,5 @@
-﻿uFormal Specification
-=====================
+﻿Formal Specification
+====================
 
 > <strong>Draft status:</strong> This specification is evolving alongside the
 > prototype. Items marked as future work, open details, or requiring evaluation
@@ -407,8 +407,10 @@ point.
 
 <p><br></p>
 
-5\. SPaT debugging decoder
---------------------------
+5\. Debugging decoders
+----------------------
+
+### 5.1 SPaT decoder
 
 The system shall provide a decoder for raw hexadecimal J2735 `SPAT` messages
 encoded using UPER.
@@ -422,15 +424,36 @@ encoded using UPER.
 | DEC-5 | For text-file input, default the JSON output path to `output/<input-file-name>_decoded.json`, where `<input-file-name>` is the input file name without its extension. The user may provide a different JSON output path. For a hexadecimal message supplied directly on the command line, default to `output/decoded_spat.json`. |
 | DEC-6 | When decoding a file, process every nonblank line independently and identify each terminal summary by its source line number.                                                                                                                                                                                                    |
 | DEC-7 | Report invalid hexadecimal data or messages that cannot be decoded as a J2735 `SPAT` UPER message. For file input, include the source line number in the error. Include only successfully decoded messages in the JSON output file.                                                                                              |
-| DEC-8 | Initially support raw top-level `SPAT` messages emitted by this project. Support for other J2735 message types or framed transport data is future work.                                                                                                                                                                          |
+| DEC-8 | The SPaT decoder initially supports raw top-level `SPAT` messages emitted by this project. Framed transport data is outside its initial profile.                                                                                                                                                                                 |
 
-This decoder is primarily for debugging at this stage.
+### 5.2 MAP decoder
+
+The system shall also decode raw hexadecimal J2735 `MapData` messages encoded
+using UPER. The existing `decode` command shall accept an explicit MAP message
+type selection; its default shall remain SPaT for existing command lines. Except
+for the selected ASN.1 type, default name for direct input, and terminal output,
+the MAP decoder shall follow the SPaT decoder behavior in §5.1.
+
+| ID        | Requirement                                                                                                                                                                                                                                                                                                                                |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| MAP-DEC-1 | Accept a hexadecimal message directly or a text file containing one hexadecimal message per line, as in DEC-1. Ignore whitespace within messages and skip blank file lines, as in DEC-2.                                                                                                                                                   |
+| MAP-DEC-2 | Decode each input as a complete top-level J2735 `MapData` message. Write the complete decoded ASN.1 values as indented JSON, including intersection geometry, lanes, node lists, and connections when present.                                                                                                                             |
+| MAP-DEC-3 | For a file, process each nonblank line independently, as in DEC-6. A bad line shall not prevent later lines from being decoded.                                                                                                                                                                                                            |
+| MAP-DEC-4 | Use the same JSON array format as the SPaT decoder: include only successfully decoded messages, in input order. Overwrite the selected output file on each run, including when some lines fail.                                                                                                                                            |
+| MAP-DEC-5 | For file input, default to `output/<input-file-name>_decoded.json`, as in DEC-5. Allow a different JSON output path. For direct hexadecimal input, default to `output/decoded_map.json`. Do not overwrite the input file.                                                                                                                  |
+| MAP-DEC-6 | Write nothing to the terminal during MAP decoding: no summaries, success messages, diagnostics, or tracebacks. Explicit `--help` requests may display help text.                                                                                                                                                                           |
+| MAP-DEC-7 | Invalid hexadecimal data, a message that cannot be decoded as `MapData` UPER, or a file-access failure shall produce a nonzero exit status. For file input, continue after an invalid message and write the successfully decoded messages to JSON. If the JSON file cannot be written, exit with a nonzero status without terminal output. |
+| MAP-DEC-8 | Initially support raw top-level `MapData` messages emitted by this project. Framed transport data and other J2735 message types are outside the initial decoder profile.                                                                                                                                                                   |
+
+<p><br></p>
+
+<p><br></p>
 
 6\. Error Handling and User Friendliness
 ----------------------------------------
 
-The requirements in this section apply to the message generators and the SPaT
-decoder. Where §5 defines more specific decoder behavior, §5 takes precedence.
+The requirements in this section apply to the message generators and both
+decoders. Where §5 defines more specific decoder behavior, §5 takes precedence.
 
 ### 6.1 Input validation and diagnostics
 
@@ -440,21 +463,21 @@ decoder. Where §5 defines more specific decoder behavior, §5 takes precedence.
 | ERR-2 | For a configuration error, identify the input file and the relevant JSON field path whenever available (for example, `spat.movements[1].phases[0].duration`). For a JSON5 syntax error, report the line and column when the parser provides them. |
 | ERR-3 | Explain what is invalid and what kind of value is expected. User-facing diagnostics shall use configuration and command-line terms rather than requiring users to interpret ASN.1 or PyCrate internals.                                           |
 | ERR-4 | Apply a documented default only when its field is omitted. A present field with an invalid type or value shall be reported as an error; it shall not be silently coerced, clamped, or replaced with a default.                                    |
-| ERR-5 | For expected input, decoding, and file-access errors, print a concise diagnostic and exit with a nonzero status. Do not print a Python traceback for these errors.                                                                                |
+| ERR-5 | For expected input, decoding, and file-access errors, exit with a nonzero status and do not print a Python traceback. Print a concise diagnostic for the generators and SPaT decoder. MAP decoding shall remain silent as specified in §5.2.      |
 
 ### 6.2 Command-line and output behavior
 
 | ID    | Requirement                                                                                                                                                                                                                                                                                                                         |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ERR-6 | Each command-line entry point shall provide `--help` output describing its inputs, outputs, and available options.                                                                                                                                                                                                                  |
-| ERR-7 | File-access diagnostics shall identify the affected path and whether the operation was reading input or writing output. A success message shall be printed only after the requested output has been written successfully.                                                                                                           |
+| ERR-7 | Generator and SPaT decoder file-access diagnostics shall identify the affected path and whether the operation was reading input or writing output. Their success messages shall be printed only after the requested output has been written successfully. The MAP decoder shall remain silent as specified in §5.2.                 |
 | ERR-8 | The generator shall validate the configuration before creating or truncating its destination file. It shall write generated output to a temporary file and replace the requested destination only after generation and writing succeed. On failure, it shall exit with a nonzero status and preserve any existing destination file. |
-| ERR-9 | The generator shall make its destination-file overwrite behavior clear and shall not require interactive confirmation, so it can be used in scripts. The decoder's JSON overwrite and partial-decode behavior is specified in §5.                                                                                                   |
+| ERR-9 | The generator shall make its destination-file overwrite behavior clear and shall not require interactive confirmation, so it can be used in scripts. The decoders' JSON overwrite and partial-decode behavior is specified in §5.                                                                                                   |
 
-The terminal output shall remain readable when a file contains multiple
-messages. Decoder summaries and per-line error reporting are specified in §5.
-The command-line tools do not require a graphical interface in the initial
-profile.
+The terminal output for generation and SPaT decoding shall remain readable when
+a file contains multiple messages. MAP decoding shall write only its JSON output
+file during normal invocation. The command-line tools do not require a graphical
+interface in the initial profile.
 
 7\. Implementation notes
 ------------------------

@@ -1,4 +1,4 @@
-"""Command-line interface for MAP/SPaT generation and SPaT inspection."""
+"""Command-line interface for MAP/SPaT generation and decoding."""
 
 from __future__ import annotations
 
@@ -17,12 +17,34 @@ from .core import (
     Configuration,
     MessageEncodingError,
     UserInputError,
+    decode_map,
     decode_spat,
     encode_map,
     generate_spat_messages,
     load_configuration,
     validate_combined_output,
 )
+
+
+def _map_decode_requested(arguments: list[str]) -> bool:
+    if not arguments or arguments[0] != "decode":
+        return False
+    return any(
+        argument == "--message-type=map"
+        or (
+            argument == "--message-type"
+            and index + 1 < len(arguments)
+            and arguments[index + 1] == "map"
+        )
+        for index, argument in enumerate(arguments)
+    )
+
+
+class _CommandParser(argparse.ArgumentParser):
+    def error(self, message: str) -> None:
+        if _map_decode_requested(sys.argv[1:]):
+            self.exit(2)
+        super().error(message)
 
 
 @dataclass
@@ -293,6 +315,8 @@ def _atomic_json_write(path: Path, values: list[dict[str, Any]]) -> None:
 
 def _run_decode(args: argparse.Namespace) -> int:
     input_path: Path | None = None
+    is_map = args.message_type == "map"
+    decode_message = decode_map if is_map else decode_spat
     try:
         message_argument = args.message
         looks_like_hex = bool(message_argument) and all(
@@ -317,47 +341,55 @@ def _run_decode(args: argparse.Namespace) -> int:
                 if not line.strip():
                     continue
                 try:
-                    decoded = decode_spat(line)
+                    decoded = decode_message(line)
                 except UserInputError as error:
                     errors.append(f"line {line_number}: {error}")
                     continue
                 decoded_messages.append(decoded)
-                print(_summary(decoded, f"Line {line_number}"))
+                if not is_map:
+                    print(_summary(decoded, f"Line {line_number}"))
         else:
-            decoded = decode_spat(args.message)
+            decoded = decode_message(args.message)
             decoded_messages = [decoded]
             errors = []
-            print(_summary(decoded, "Message"))
+            if not is_map:
+                print(_summary(decoded, "Message"))
 
         output_path = args.json_output
         if output_path is None:
+            default_name = "decoded_map.json" if is_map else "decoded_spat.json"
             output_path = (
                 Path("output") / f"{input_path.stem}_decoded.json"
                 if input_path is not None
-                else Path("output") / "decoded_spat.json"
+                else Path("output") / default_name
             )
         if input_path is not None and output_path.resolve() == input_path.resolve():
             raise UserInputError(
                 f"JSON output path {output_path} is the same as input file {input_path}"
             )
         _atomic_json_write(output_path, decoded_messages)
-        print(f"Full decoded JSON written to {output_path}")
+        if not is_map:
+            print(f"Full decoded JSON written to {output_path}")
         if errors:
-            for error in errors:
-                print(f"error: {input_path}: {error}", file=sys.stderr)
+            if not is_map:
+                for error in errors:
+                    print(f"error: {input_path}: {error}", file=sys.stderr)
             return 2
         return 0
     except (OSError, UserInputError) as error:
-        print(f"error: {error}", file=sys.stderr)
+        if not is_map:
+            print(f"error: {error}", file=sys.stderr)
         return 2
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
+    parser = _CommandParser(
         prog="v2x-project",
         description="Generate and inspect J2735 MAP and SPaT UPER messages.",
     )
-    commands = parser.add_subparsers(dest="operation", required=True)
+    commands = parser.add_subparsers(
+        dest="operation", required=True, parser_class=_CommandParser
+    )
 
     for name, description in (
         ("map", "Generate one static MAP message from the unified JSON5 configuration."),
@@ -387,12 +419,18 @@ def build_parser() -> argparse.ArgumentParser:
 
     decode = commands.add_parser(
         "decode",
-        description="Decode raw top-level J2735 SPAT UPER messages for debugging.",
+        description="Decode raw top-level J2735 SPAT or MapData UPER messages.",
         help="decode a hex message or a file containing one message per line",
     )
     decode.add_argument(
         "message",
         help="hex-encoded message or path to a text file containing hex messages",
+    )
+    decode.add_argument(
+        "--message-type",
+        choices=("spat", "map"),
+        default="spat",
+        help="message type to decode (default: spat); MAP writes JSON without terminal output",
     )
     decode.add_argument(
         "--json-output",
