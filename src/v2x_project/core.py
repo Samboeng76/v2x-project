@@ -585,7 +585,9 @@ def _timestamp_fields(moment: datetime) -> dict[str, int]:
     }
 
 
-def encode_map(configuration: Configuration, start_time: datetime) -> bytes:
+def encode_map(
+    configuration: Configuration, start_time: datetime, message_frame: bool = False
+) -> bytes:
     if start_time.tzinfo is None or start_time.utcoffset() is None:
         raise UserInputError("start time must include a timezone")
     moment = start_time.astimezone(UTC)
@@ -613,6 +615,11 @@ def encode_map(configuration: Configuration, start_time: datetime) -> bytes:
     if configuration.include_timestamps:
         map_value["timeStamp"] = _minute_of_year(moment)
     try:
+        if message_frame:
+            j2735.MessageFrame.MessageFrame.set_val(
+                {"messageId": 18, "value": ("MapData", map_value)}
+            )
+            return j2735.MessageFrame.MessageFrame.to_uper()
         j2735.MapData.MapData.set_val(map_value)
         return j2735.MapData.MapData.to_uper()
     except Exception:  # noqa: BLE001 - PyCrate raises multiple encoding exceptions.
@@ -622,9 +629,9 @@ def encode_map(configuration: Configuration, start_time: datetime) -> bytes:
 
 
 def generate_spat_messages(
-    configuration: Configuration, start_time: datetime
+    configuration: Configuration, start_time: datetime, message_frame: bool = False
 ) -> Iterator[bytes]:
-    """Yield one complete top-level SPAT UPER message per sample time."""
+    """Yield one raw or framed SPAT UPER message per sample time."""
     if start_time.tzinfo is None or start_time.utcoffset() is None:
         raise UserInputError("start time must include a timezone")
     start = start_time.astimezone(UTC)
@@ -664,6 +671,12 @@ def generate_spat_messages(
             intersection.update(_timestamp_fields(sample_time))
             frame["timeStamp"] = _minute_of_year(sample_time)
         try:
+            if message_frame:
+                j2735.MessageFrame.MessageFrame.set_val(
+                    {"messageId": 19, "value": ("SPAT", frame)}
+                )
+                yield j2735.MessageFrame.MessageFrame.to_uper()
+                continue
             j2735.SPAT.SPAT.set_val(frame)
             yield j2735.SPAT.SPAT.to_uper()
         except Exception:  # noqa: BLE001 - PyCrate raises multiple encoding exceptions.
@@ -682,39 +695,58 @@ def _hex_message_bytes(hex_text: str) -> bytes:
         raise UserInputError(f"invalid hexadecimal message: {error}") from None
 
 
-def decode_spat(hex_text: str) -> dict[str, Any]:
-    """Decode a raw hexadecimal J2735 SPAT UPER message."""
+def _decode_message(
+    hex_text: str, message_type: str, message_id: int, message_frame: bool
+) -> dict[str, Any]:
     encoded = _hex_message_bytes(hex_text)
+    if message_frame:
+        decoder = j2735.MessageFrame.MessageFrame
+    elif message_type == "MapData":
+        decoder = j2735.MapData.MapData
+    else:
+        decoder = j2735.SPAT.SPAT
+    format_name = (
+        f"MessageFrame containing {message_type}" if message_frame else message_type
+    )
     try:
         cursor = Charpy(encoded)
-        j2735.SPAT.SPAT.from_uper_ws(cursor)
+        decoder.from_uper_ws(cursor)
         if cursor.len_bit():
             raise ValueError("trailing data")
-        decoded = j2735.SPAT.SPAT.get_val()
+        decoded = decoder.get_val()
     except Exception:  # noqa: BLE001 - PyCrate raises multiple decode exceptions.
         raise UserInputError(
-            "cannot decode message as a raw J2735 SPAT UPER frame"
+            f"cannot decode message as a J2735 {format_name} UPER message"
         ) from None
-    if not isinstance(decoded, dict) or not isinstance(decoded.get("intersections"), list):
-        raise UserInputError("decoded value is not a top-level J2735 SPAT frame")
-    return decoded
-
-
-def decode_map(hex_text: str) -> dict[str, Any]:
-    """Decode a raw hexadecimal J2735 MapData UPER message."""
-    encoded = _hex_message_bytes(hex_text)
-    try:
-        cursor = Charpy(encoded)
-        j2735.MapData.MapData.from_uper_ws(cursor)
-        if cursor.len_bit():
-            raise ValueError("trailing data")
-        decoded = j2735.MapData.MapData.get_val()
-    except Exception:  # noqa: BLE001 - PyCrate can raise several decode errors.
-        raise UserInputError(
-            "cannot decode message as a raw J2735 MapData UPER frame"
-        ) from None
-    if not isinstance(decoded, dict) or not isinstance(
-        decoded.get("intersections"), list
+    if message_frame:
+        if not isinstance(decoded, dict) or decoded.get("messageId") != message_id:
+            raise UserInputError(
+                f"expected a J2735 MessageFrame containing {message_type}"
+            )
+        opened = decoded.get("value")
+        if (
+            not isinstance(opened, tuple)
+            or len(opened) != 2
+            or opened[0] != message_type
+        ):
+            raise UserInputError(
+                f"expected a J2735 MessageFrame containing {message_type}"
+            )
+        payload = opened[1]
+    else:
+        payload = decoded
+    if not isinstance(payload, dict) or not isinstance(
+        payload.get("intersections"), list
     ):
-        raise UserInputError("decoded value is not a top-level J2735 MapData frame")
-    return decoded
+        raise UserInputError(f"decoded value is not a J2735 {message_type} message")
+    return {"messageId": message_id, "value": payload} if message_frame else payload
+
+
+def decode_spat(hex_text: str, message_frame: bool = False) -> dict[str, Any]:
+    """Decode a raw SPAT value or a MessageFrame containing SPAT."""
+    return _decode_message(hex_text, "SPAT", 19, message_frame)
+
+
+def decode_map(hex_text: str, message_frame: bool = False) -> dict[str, Any]:
+    """Decode a raw MapData value or a MessageFrame containing MapData."""
+    return _decode_message(hex_text, "MapData", 18, message_frame)

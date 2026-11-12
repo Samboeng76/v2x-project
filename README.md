@@ -46,6 +46,10 @@ Generate both from the same UTC start time:
 uv run v2x-project both inputFiles/SampleIntersection.json5 --map-output output/sample_map.txt --spat-output output/sample_spat.txt
 ```
 
+Add `--message-frame` to `map`, `spat`, or `both` to wrap each generated
+message in a J2735 `MessageFrame`. Raw `MapData` and `SPAT` output remains the
+default.
+
 Decode the SPaT batch and save the complete decoded values as JSON:
 
 ```sh
@@ -57,6 +61,9 @@ Decode a MAP message to JSON without terminal output:
 ```sh
 uv run v2x-project decode output/sample_map.txt --message-type map --json-output output/sample_map_decoded.json
 ```
+
+Add `--message-frame` to `decode` when the input contains framed messages.
+Framed JSON includes `messageId` and the decoded message under `value`.
 
 Both decoders accept a hexadecimal message or a file with one message per line.
 SPaT is the default message type. MAP decoding writes an array of successfully
@@ -98,3 +105,17 @@ The `v2x-project` command provides `map`, `spat`, `both`, and `decode`
 operations. J2735 ASN.1 definitions are provided by the
 `src/j2735_202409` Git submodule; keep it initialized when setting up a fresh
 checkout.
+
+## Validation
+
+To check the UPER output with an independent decoder, paste one hexadecimal
+message into the [Neaera J2735 codec](https://cvtools.neaeraconsulting.com/j2735-codec)
+or the [ITS Roads J2735 decoder](https://cv2x.itsroads.com/decoder). Select
+J2735 revision 2024 where prompted, and choose the matching PDU or message type:
+
+- Raw MAP: `MapData`
+- Raw SPaT: `SPAT`
+- Framed MAP or SPaT: `MessageFrame`
+
+Decode SPaT output one line at a time and compare the decoded fields with the
+input configuration.

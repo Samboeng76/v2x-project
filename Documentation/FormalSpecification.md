@@ -75,15 +75,29 @@ Direct Python callers of `encode_map` and `generate_spat_messages` shall provide
 a timezone-aware `start_time`. Both APIs shall reject naive datetimes and
 convert accepted times to UTC before computing timestamps.
 
+### 2.2.1 Optional `MessageFrame` output
+
+The `map`, `spat`, and `both` commands shall accept a `--message-frame` option.
+Without it, output shall remain raw `MapData` or `SPAT` UPER. With it, the
+generator shall wrap each complete `MapData` value in a J2735 `MessageFrame`
+with `messageId` 18, and each complete `SPAT` value in a separate
+`MessageFrame` with `messageId` 19, then UPER-encode the outer frame. The
+`both` command shall apply the option to both outputs; a SPaT batch shall still
+contain one hexadecimal message per line. Framing shall not change the MAP or
+SPaT field values or their shared relationships. This is a command-line output
+choice, not a JSON5 configuration field. The §5 debugging decoders shall accept
+framed messages when `--message-frame` is selected.
+
 3\. SPaT requirements
 ---------------------
 
 ### 3.1 Message structure
 
-Each output line shall encode a complete top-level J2735 `SPAT` data frame,
-including its `intersections` list. For this project, that list shall contain
-the configured intersection; output shall not encode an `IntersectionState` by
-itself.
+By default, each output line shall encode a complete top-level J2735 `SPAT`
+data frame, including its `intersections` list. With `--message-frame`, that
+value shall be wrapped as specified in §2.2.1. For this project, the list shall
+contain the configured intersection; output shall not encode an
+`IntersectionState` by itself.
 
 | ASN.1 field                  | Type and constraints                                            | Requirement                                                                                                                      |
 | ---------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -244,7 +258,9 @@ a 16-bit all-zero bit string.
 
 ### 4.1 Top-level message
 
-The system shall convert the completed `MapData` value to UPER-encoded bytes.
+By default, the system shall convert the completed `MapData` value to
+UPER-encoded bytes. With `--message-frame`, that value shall be wrapped as
+specified in §2.2.1.
 The top-level `MapData` fields are:
 
 | Field              | ASN.1 type and constraints          | Requirement                                                                                                                                                                                                                                                                                             |
@@ -428,6 +444,10 @@ point.
 
 The system shall provide a decoder for raw hexadecimal J2735 `SPAT` messages
 encoded using UPER.
+With `--message-frame`, it shall instead decode a complete J2735 `MessageFrame`
+whose `messageId` is 19 and whose `value` is `SPAT`. Framed JSON shall include
+`messageId` and the complete decoded `SPAT` under `value`; terminal summaries
+shall describe the contained `SPAT` value.
 Each direct input or nonblank file line shall contain exactly one complete
 top-level message. Legal UPER padding in unused bits of its final byte is
 permitted; trailing whole bytes and concatenated messages shall be rejected.
@@ -441,7 +461,7 @@ permitted; trailing whole bytes and concatenated messages shall be rejected.
 | DEC-5 | For text-file input, default the JSON output path to `output/<input-file-name>_decoded.json`, where `<input-file-name>` is the input file name without its extension. The user may provide a different JSON output path. For a hexadecimal message supplied directly on the command line, default to `output/decoded_spat.json`. |
 | DEC-6 | When decoding a file, process every nonblank line independently and identify each terminal summary by its source line number.                                                                                                                                                                                                    |
 | DEC-7 | Report invalid hexadecimal data or messages that cannot be decoded as a J2735 `SPAT` UPER message. For file input, include the source line number in the error. Include only successfully decoded messages in the JSON output file.                                                                                              |
-| DEC-8 | The SPaT decoder initially supports raw top-level `SPAT` messages emitted by this project. Framed transport data is outside its initial profile.                                                                                                                                                                                 |
+| DEC-8 | Decode raw top-level `SPAT` by default and a `MessageFrame` containing `SPAT` only when `--message-frame` is selected. Reject a frame with the wrong message ID or contained type. Other framed transport data is outside the initial profile.                                                                                 |
 
 ### 5.2 MAP decoder
 
@@ -450,6 +470,9 @@ using UPER. The existing `decode` command shall accept an explicit MAP message
 type selection; its default shall remain SPaT for existing command lines. Except
 for the selected ASN.1 type, default name for direct input, and terminal output,
 the MAP decoder shall follow the SPaT decoder behavior in §5.1.
+With `--message-frame`, it shall instead decode a complete J2735 `MessageFrame`
+whose `messageId` is 18 and whose `value` is `MapData`. Framed JSON shall include
+`messageId` and the complete decoded `MapData` under `value`.
 
 | ID        | Requirement                                                                                                                                                                                                                                                                                                                                |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -460,7 +483,7 @@ the MAP decoder shall follow the SPaT decoder behavior in §5.1.
 | MAP-DEC-5 | For file input, default to `output/<input-file-name>_decoded.json`, as in DEC-5. Allow a different JSON output path. For direct hexadecimal input, default to `output/decoded_map.json`. Do not overwrite the input file.                                                                                                                  |
 | MAP-DEC-6 | Write nothing to the terminal during MAP decoding: no summaries, success messages, diagnostics, or tracebacks. Explicit `--help` requests may display help text.                                                                                                                                                                           |
 | MAP-DEC-7 | Invalid hexadecimal data, a message that cannot be decoded as `MapData` UPER, or a file-access failure shall produce a nonzero exit status. For file input, continue after an invalid message and write the successfully decoded messages to JSON. If the JSON file cannot be written, exit with a nonzero status without terminal output. |
-| MAP-DEC-8 | Initially support raw top-level `MapData` messages emitted by this project. Framed transport data and other J2735 message types are outside the initial decoder profile.                                                                                                                                                                   |
+| MAP-DEC-8 | Decode raw top-level `MapData` by default and a `MessageFrame` containing `MapData` only when `--message-frame` is selected. Reject a frame with the wrong message ID or contained type. Other framed transport data and message types are outside the initial profile.                                                           |
 
 <p><br></p>
 
@@ -553,6 +576,9 @@ Automated tests shall check the main behaviors defined in this specification:
   at phase boundaries, and timestamps.
 * Command-line tests shall check decoding, exit status, and preservation of
   existing output files when generation fails.
+* Framed generation and decoding shall preserve the contained MAP and SPaT
+  values, select message IDs 18 and 19 respectively, and reject a frame of the
+  wrong message type or with trailing whole bytes.
 
 Generated UPER messages should also be checked with an independent J2735 decoder
 before they are used to assess receiver compatibility.

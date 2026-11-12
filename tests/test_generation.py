@@ -47,6 +47,31 @@ class GenerationTests(unittest.TestCase):
                     with self.assertRaises(UserInputError):
                         decoder((message + extra).hex())
 
+    def test_message_frames_preserve_values_and_identify_message_type(self) -> None:
+        configuration = load_configuration(SAMPLE)
+        raw_map = encode_map(configuration, START)
+        framed_map = encode_map(configuration, START, message_frame=True)
+        raw_spat = next(generate_spat_messages(configuration, START))
+        framed_spat = next(
+            generate_spat_messages(configuration, START, message_frame=True)
+        )
+
+        self.assertEqual(
+            decode_map(framed_map.hex(), message_frame=True),
+            {"messageId": 18, "value": decode_map(raw_map.hex())},
+        )
+        self.assertEqual(
+            decode_spat(framed_spat.hex(), message_frame=True),
+            {"messageId": 19, "value": decode_spat(raw_spat.hex())},
+        )
+        with self.assertRaisesRegex(UserInputError, "containing SPAT"):
+            decode_spat(framed_map.hex(), message_frame=True)
+        with self.assertRaisesRegex(UserInputError, "containing MapData"):
+            decode_map(framed_spat.hex(), message_frame=True)
+        for framed, decoder in ((framed_map, decode_map), (framed_spat, decode_spat)):
+            with self.subTest(message_id=framed[1]), self.assertRaises(UserInputError):
+                decoder((framed + b"\x00").hex(), message_frame=True)
+
     def test_specification_example_generates_map_and_single_movement_spat(self) -> None:
         specification = (SAMPLE.parents[1] / "Documentation/FormalSpecification.md").read_text(
             encoding="utf-8"

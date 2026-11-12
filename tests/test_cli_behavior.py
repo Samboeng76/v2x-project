@@ -122,6 +122,54 @@ class CommandLineBehaviorTests(unittest.TestCase):
             self.assertEqual(result.stdout, "")
             self.assertIn("writing JSON output", result.stderr)
 
+    def test_both_generates_framed_messages_that_decode_through_cli(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            map_output = temporary / "map.txt"
+            spat_output = temporary / "spat.txt"
+            result = self.run_command(
+                "both",
+                str(SAMPLE),
+                "--map-output",
+                str(map_output),
+                "--spat-output",
+                str(spat_output),
+                "--message-frame",
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(map_output.read_text(encoding="utf-8").startswith("0012"))
+            spat_lines = spat_output.read_text(encoding="utf-8").splitlines()
+            self.assertEqual(len(spat_lines), 150)
+            self.assertTrue(all(line.startswith("0013") for line in spat_lines))
+
+            for message_type, source, message_id in (
+                ("map", map_output, 18),
+                ("spat", spat_output, 19),
+            ):
+                with self.subTest(message_type=message_type):
+                    destination = temporary / f"decoded_{message_type}.json"
+                    decoded = self.run_command(
+                        "decode",
+                        str(source),
+                        "--message-type",
+                        message_type,
+                        "--message-frame",
+                        "--json-output",
+                        str(destination),
+                    )
+                    self.assertEqual(decoded.returncode, 0, decoded.stderr)
+                    messages = json.loads(destination.read_text(encoding="utf-8"))
+                    self.assertEqual(messages[0]["messageId"], message_id)
+                    self.assertEqual(
+                        messages[0]["value"]["intersections"][0]["id"], {"id": 42}
+                    )
+                    if message_type == "spat":
+                        self.assertEqual(len(messages), 150)
+                        self.assertIn("Line 1", decoded.stdout)
+                    else:
+                        self.assertEqual(len(messages), 1)
+                        self.assertEqual(decoded.stdout, "")
+
     def test_invalid_configuration_preserves_existing_outputs(self) -> None:
         document = pyjson5.decode(SAMPLE.read_text(encoding="utf-8"))
         document["map"]["refPoint"]["latitude"] = 91

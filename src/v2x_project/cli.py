@@ -188,21 +188,27 @@ def _run_generation(args: argparse.Namespace) -> int:
 
     if args.operation == "map":
         _reject_source_overwrite(args.config, [args.output])
-        encoded_map = encode_map(configuration, start_time)
+        encoded_map = encode_map(
+            configuration, start_time, message_frame=args.message_frame
+        )
         _stage_outputs([_binary_job(args.output, "MAP output", [encoded_map])])
         print(f"MAP UPER message written to {args.output}")
         return 0
 
     if args.operation == "spat":
         _reject_source_overwrite(args.config, [args.output])
-        messages = generate_spat_messages(configuration, start_time)
+        messages = generate_spat_messages(
+            configuration, start_time, message_frame=args.message_frame
+        )
         _stage_outputs([_binary_job(args.output, "SPaT output", messages)])
         print(f"SPaT batch written to {args.output}")
         return 0
 
     _reject_source_overwrite(args.config, [args.map_output, args.spat_output])
-    map_bytes = encode_map(configuration, start_time)
-    spat_messages = generate_spat_messages(configuration, start_time)
+    map_bytes = encode_map(configuration, start_time, message_frame=args.message_frame)
+    spat_messages = generate_spat_messages(
+        configuration, start_time, message_frame=args.message_frame
+    )
     jobs = [
         _binary_job(args.map_output, "MAP output", [map_bytes]),
         _binary_job(args.spat_output, "SPaT output", spat_messages),
@@ -344,22 +350,24 @@ def _run_decode(args: argparse.Namespace) -> int:
                 if not line.strip():
                     continue
                 try:
-                    decoded = decode_message(line)
+                    decoded = decode_message(line, message_frame=args.message_frame)
                 except UserInputError as error:
                     errors.append(f"line {line_number}: {error}")
                     continue
                 decoded_messages.append(decoded)
                 if not is_map:
-                    summaries.append(_summary(decoded, f"Line {line_number}"))
+                    summary_value = decoded["value"] if args.message_frame else decoded
+                    summaries.append(_summary(summary_value, f"Line {line_number}"))
         else:
             if looks_like_path:
                 raise UserInputError(
                     f"reading input {candidate}: file does not exist or is not a regular file"
                 )
-            decoded = decode_message(args.message)
+            decoded = decode_message(args.message, message_frame=args.message_frame)
             decoded_messages = [decoded]
             errors = []
-            summaries = [_summary(decoded, "Message")] if not is_map else []
+            summary_value = decoded["value"] if args.message_frame else decoded
+            summaries = [_summary(summary_value, "Message")] if not is_map else []
 
         output_path = args.json_output
         if output_path is None:
@@ -410,6 +418,11 @@ def build_parser() -> argparse.ArgumentParser:
             type=Path,
             help="destination text file; one hex-encoded UPER message per line (overwritten)",
         )
+        command.add_argument(
+            "--message-frame",
+            action="store_true",
+            help="wrap each MAP or SPaT value in a J2735 MessageFrame",
+        )
 
     both = commands.add_parser(
         "both",
@@ -424,10 +437,15 @@ def build_parser() -> argparse.ArgumentParser:
         required=True,
         help="SPaT output file with one hex message per line (overwritten)",
     )
+    both.add_argument(
+        "--message-frame",
+        action="store_true",
+        help="wrap both MAP and SPaT values in J2735 MessageFrames",
+    )
 
     decode = commands.add_parser(
         "decode",
-        description="Decode raw top-level J2735 SPAT or MapData UPER messages.",
+        description="Decode raw or MessageFrame-wrapped J2735 SPAT or MapData UPER messages.",
         help="decode a hex message or a file containing one message per line",
     )
     decode.add_argument(
@@ -439,6 +457,11 @@ def build_parser() -> argparse.ArgumentParser:
         choices=("spat", "map"),
         default="spat",
         help="message type to decode (default: spat); MAP writes JSON without terminal output",
+    )
+    decode.add_argument(
+        "--message-frame",
+        action="store_true",
+        help="decode a J2735 MessageFrame instead of a raw SPAT or MapData value",
     )
     decode.add_argument(
         "--json-output",
