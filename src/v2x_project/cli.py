@@ -8,10 +8,11 @@ import os
 import shutil
 import sys
 import tempfile
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any
 
 from .core import (
     Configuration,
@@ -22,7 +23,6 @@ from .core import (
     encode_map,
     generate_spat_messages,
     load_configuration,
-    validate_combined_output,
 )
 
 
@@ -98,7 +98,7 @@ def _stage_outputs(jobs: list[_OutputJob]) -> list[_StagedFile]:
                 ) from None
             except (MessageEncodingError, UserInputError):
                 raise
-            except Exception as error:
+            except Exception as error:  # noqa: BLE001 - Output writers can raise arbitrary errors.
                 raise MessageEncodingError(f"writing {job.description}: {error}") from None
 
         # Save existing destinations so a failed multi-file commit can roll back
@@ -154,8 +154,6 @@ def _stage_outputs(jobs: list[_OutputJob]) -> list[_StagedFile]:
                     # backup is harmless and can be removed by the user.
                     pass
         return staged
-    except (OSError, UserInputError, MessageEncodingError):
-        raise
     finally:
         for item in staged:
             try:
@@ -186,7 +184,7 @@ def _reject_source_overwrite(source: Path, targets: list[Path]) -> None:
 
 def _run_generation(args: argparse.Namespace) -> int:
     configuration: Configuration = load_configuration(args.config)
-    start_time = datetime.now(timezone.utc)
+    start_time = datetime.now(UTC)
 
     if args.operation == "map":
         _reject_source_overwrite(args.config, [args.output])
@@ -202,10 +200,6 @@ def _run_generation(args: argparse.Namespace) -> int:
         print(f"SPaT batch written to {args.output}")
         return 0
 
-    try:
-        validate_combined_output(configuration)
-    except UserInputError as error:
-        raise UserInputError(f"{args.config}: {error}") from None
     _reject_source_overwrite(args.config, [args.map_output, args.spat_output])
     map_bytes = encode_map(configuration, start_time)
     spat_messages = generate_spat_messages(configuration, start_time)
@@ -319,11 +313,19 @@ def _run_decode(args: argparse.Namespace) -> int:
     decode_message = decode_map if is_map else decode_spat
     try:
         message_argument = args.message
-        looks_like_hex = bool(message_argument) and all(
-            char in "0123456789abcdefABCDEF \t\r\n\v\f" for char in message_argument
+        candidate = Path(message_argument)
+        try:
+            is_file = candidate.is_file()
+        except OSError:
+            # A long direct hex message is not a usable filesystem path.
+            is_file = False
+        looks_like_path = (
+            "/" in message_argument
+            or "\\" in message_argument
+            or bool(candidate.suffix)
+            or "_" in message_argument
         )
-        candidate = Path(message_argument) if not looks_like_hex else None
-        if candidate is not None and candidate.is_file():
+        if is_file:
             input_path = candidate
             try:
                 lines = candidate.read_text(encoding="utf-8").splitlines()
@@ -337,6 +339,7 @@ def _run_decode(args: argparse.Namespace) -> int:
                 ) from None
             decoded_messages: list[dict[str, Any]] = []
             errors: list[str] = []
+            summaries: list[str] = []
             for line_number, line in enumerate(lines, start=1):
                 if not line.strip():
                     continue
@@ -347,13 +350,16 @@ def _run_decode(args: argparse.Namespace) -> int:
                     continue
                 decoded_messages.append(decoded)
                 if not is_map:
-                    print(_summary(decoded, f"Line {line_number}"))
+                    summaries.append(_summary(decoded, f"Line {line_number}"))
         else:
+            if looks_like_path:
+                raise UserInputError(
+                    f"reading input {candidate}: file does not exist or is not a regular file"
+                )
             decoded = decode_message(args.message)
             decoded_messages = [decoded]
             errors = []
-            if not is_map:
-                print(_summary(decoded, "Message"))
+            summaries = [_summary(decoded, "Message")] if not is_map else []
 
         output_path = args.json_output
         if output_path is None:
@@ -369,6 +375,8 @@ def _run_decode(args: argparse.Namespace) -> int:
             )
         _atomic_json_write(output_path, decoded_messages)
         if not is_map:
+            for summary in summaries:
+                print(summary)
             print(f"Full decoded JSON written to {output_path}")
         if errors:
             if not is_map:

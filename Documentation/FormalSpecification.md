@@ -24,12 +24,16 @@
 
 The shared JSON5 configuration shall contain the following fields:
 
-| Field               | Type    | Requirement and purpose                                                                                                                                                                              |
-| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `includeTimestamps` | Boolean | Optional; defaults to `true`. Controls timestamp fields in both message types.                                                                                                                       |
-| `intersection`      | Object  | Shared intersection identity, containing an integer `id` and a string `name`.                                                                                                                        |
-| `map`               | Object  | MAP-specific geometry, lanes, and lane connections. The initial layout and its input fields are defined in §2.1.1 and §4.4.1. A connection's `signalGroup`, when present, refers to a SPaT movement. |
-| `spat`              | Object  | SPaT movement definitions and SPaT-specific settings, described in §3.                                                                                                                               |
+| Field               | Type    | Requirement and purpose                                                                                                                                                                                         |
+| ------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `includeTimestamps` | Boolean | Optional; defaults to `true`. Controls timestamp fields in both message types.                                                                                                                                  |
+| `intersection`      | Object  | Shared intersection identity, containing an integer `id` and a required `name` of 1 to 63 ASCII characters.                                                                                                     |
+| `map`               | Object  | MAP-specific geometry, lanes, and lane connections. The initial layout and its input fields are defined in §2.1.1 and §4.4.1. A connection's `signalGroup`, when present, can be referenced by a SPaT movement. |
+| `spat`              | Object  | SPaT movement definitions and SPaT-specific settings, described in §3.                                                                                                                                          |
+
+The current profile shall reject unrecognized JSON5 keys at every object level.
+Support for additional input fields and mappings is future work; valid V2X
+messages may be constructed from inputs beyond this profile.
 
 The input shall not request or supply an intersection `region` value. The
 optional `region` component of `IntersectionReferenceID` shall be omitted.
@@ -59,14 +63,17 @@ node-offset encoding.
 
 ### 2.2 MAP/SPaT consistency
 
-| Value or relationship | Requirement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Intersection ID       | The same intersection ID shall be used by MAP and SPaT output for the same intersection.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Signal-group IDs      | A signal group used by a MAP lane connection shall be present in the SPaT movements, and the generator shall check this relationship. In the `fourWayNoLeftTurn` layout, through groups 1 through 4 may be linked; signalized right turns and left-turn links are unsupported. When MAP and SPaT are generated together using this layout, the SPaT configuration shall not define movements for unsupported signalized turns. MAP and SPaT movement/lane data remain independently defined in their respective sections. |
-| Timestamps            | MAP and SPaT timestamps shall use a common UTC time basis. For a SPaT batch, the shared start time shall be the MAP timestamp and the timestamp of the first SPaT sample. Subsequent SPaT timestamps shall advance by elapsed simulation time. When `includeTimestamps` is false, optional timestamps shall be omitted from both messages.                                                                                                                                                                                |
-| Other revisions       | MAP geometry revision and SPaT message revision are independent counters.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Value or relationship | Requirement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Intersection ID       | The same intersection ID shall be used by MAP and SPaT output for the same intersection.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Signal-group IDs      | Every SPaT movement's signal group shall match a signal group on a MAP lane connection, and the generator shall check this relationship. MAP lane connections need not have corresponding SPaT movements. The `fourWayNoLeftTurn` layout has signalized through connections with groups 1 through 4; signalized right turns and left-turn links are unsupported. SPaT movements for unsupported signalized turns shall be rejected. MAP and SPaT movement/lane data remain independently defined in their respective sections. |
+| Timestamps            | MAP and SPaT timestamps shall use a common UTC time basis. For a SPaT batch, the shared start time shall be the MAP timestamp and the timestamp of the first SPaT sample. Subsequent SPaT timestamps shall advance by elapsed simulation time. When `includeTimestamps` is false, optional timestamps shall be omitted from both messages.                                                                                                                                                                                     |
+| Other revisions       | MAP geometry revision and SPaT message revision are independent counters.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 These are the cross-message values required to agree in the initial profile.
+Direct Python callers of `encode_map` and `generate_spat_messages` shall provide
+a timezone-aware `start_time`. Both APIs shall reject naive datetimes and
+convert accepted times to UTC before computing timestamps.
 
 3\. SPaT requirements
 ---------------------
@@ -103,7 +110,7 @@ Each movement object shall contain:
 
 | Field         | ASN.1 mapping       | Requirement                                                                                                                    |
 | ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `name`        | `DescriptiveName`   | String; optional in the ASN.1 structure.                                                                                       |
+| `name`        | `DescriptiveName`   | Required in JSON5; 1 to 63 ASCII characters. Optional in the ASN.1 structure.                                                  |
 | `signalGroup` | `SignalGroupID`     | Integer required in JSON5 and stable for the movement across all phase states. Use one of the six initial-profile IDs in §3.3. |
 | `phases`      | `MovementEventList` | Ordered array of phase intervals for the movement.                                                                             |
 
@@ -114,9 +121,10 @@ names and their initial-profile support are listed in §3.4.
 ### 3.3 Initial signal-group profile
 
 Signal-group IDs identify movements and do not change when the active phase
-changes. A matching ID in a MAP lane connection refers to its SPaT movement.
-These assignments are a project-level mapping, not a universal numbering
-prescribed by J2735.
+changes. A SPaT movement's ID identifies the matching MAP lane connection. These
+assignments are a project-level mapping, not a universal numbering prescribed by
+J2735. The ID determines the movement assignment. The `name` is informational
+and shall not be checked for agreement with the assigned direction.
 
 | Signal group | Movement             |
 | ------------ | -------------------- |
@@ -127,7 +135,9 @@ prescribed by J2735.
 | `5`          | Northbound left turn |
 | `6`          | Southbound left turn |
 
-Other signal-group assignments are not supported by the initial profile.
+Other signal-group assignments are not supported by the initial profile. Groups
+5 and 6 require a MAP layout with signalized left-turn connections and cannot be
+used with `fourWayNoLeftTurn`.
 
 ### 3.4 Phase states and timing
 
@@ -166,6 +176,9 @@ generator shall not need to wait in real time while creating the file.
 | Sample times       | Sample at 0, `messageInterval`, 2 × `messageInterval`, and so on, stopping before the batch end.                                                                                  |
 | Message contents   | Each message shall contain the active phase for every movement.                                                                                                                   |
 | `minEndTime`       | Marks the phase interval's end in tenths of a second within the current or next UTC hour.                                                                                         |
+
+This profile emits `minEndTime` values from 0 through 35999, wrapping to 0 at
+each UTC hour boundary; it does not emit values 36000 through 36111.
 
 Use the shared UTC start time plus elapsed simulation time for SPaT timestamps
 and timing. When MAP and SPaT are generated together, the MAP timestamp shall
@@ -345,8 +358,9 @@ The required initial connections are:
 | 5            | 2                | Through  | 1 (northbound through) |
 | 7            | 4                | Through  | 3 (eastbound through)  |
 
-Each connection shall reference an existing egress lane. Through-connection
-signal groups shall also be defined in the SPaT movements, as required by §2.2.
+Each connection shall reference an existing egress lane. Every SPaT movement's
+signal group shall match one of the through-connection signal groups above, as
+required by §2.2. A through connection may have no corresponding SPaT movement.
 The `connectingLane.maneuver` and ingress lane `maneuvers` fields shall identify
 the listed straight and right movements using the corresponding J2735
 `AllowedManeuvers` bits.
@@ -414,12 +428,15 @@ point.
 
 The system shall provide a decoder for raw hexadecimal J2735 `SPAT` messages
 encoded using UPER.
+Each direct input or nonblank file line shall contain exactly one complete
+top-level message. Legal UPER padding in unused bits of its final byte is
+permitted; trailing whole bytes and concatenated messages shall be rejected.
 
 | ID    | Requirement                                                                                                                                                                                                                                                                                                                      |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DEC-1 | Accept either a hexadecimal message supplied directly as a command-line argument or a text file containing one hexadecimal message per line.                                                                                                                                                                                     |
+| DEC-1 | Accept either a hexadecimal message supplied directly as a command-line argument or a text file containing one hexadecimal message per line. If both are supplied, the text file takes precedent.                                                                                                                                |
 | DEC-2 | Ignore whitespace within a message and skip blank lines in an input file.                                                                                                                                                                                                                                                        |
-| DEC-3 | Print a compact, human-readable terminal summary with one line per decoded message. Each summary shall identify the source line and message time, then show each movement's name, signal state, and `minEndTime` in a readable time format.                                                                                      |
+| DEC-3 | Print a compact, human-readable terminal summary with one line per decoded message. Each summary shall identify the source line and message time, then show each movement's name, signal state, and `minEndTime` in a readable time format. When timestamps are absent, display `time unavailable` as the message time.          |
 | DEC-4 | Write complete decoded ASN.1 values as indented JSON to a separate file. The JSON document shall contain all successfully decoded messages in input order. Each run shall overwrite the selected output file; users who want to keep an earlier result shall save a separate copy.                                               |
 | DEC-5 | For text-file input, default the JSON output path to `output/<input-file-name>_decoded.json`, where `<input-file-name>` is the input file name without its extension. The user may provide a different JSON output path. For a hexadecimal message supplied directly on the command line, default to `output/decoded_spat.json`. |
 | DEC-6 | When decoding a file, process every nonblank line independently and identify each terminal summary by its source line number.                                                                                                                                                                                                    |
@@ -457,13 +474,13 @@ decoders. Where §5 defines more specific decoder behavior, §5 takes precedence
 
 ### 6.1 Input validation and diagnostics
 
-| ID    | Requirement                                                                                                                                                                                                                                       |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ERR-1 | Before generating output, validate the JSON5 syntax, document shape, required fields, field types and ranges, supported values, timing constraints, and applicable MAP/SPaT relationships. Do not begin message generation when validation fails. |
-| ERR-2 | For a configuration error, identify the input file and the relevant JSON field path whenever available (for example, `spat.movements[1].phases[0].duration`). For a JSON5 syntax error, report the line and column when the parser provides them. |
-| ERR-3 | Explain what is invalid and what kind of value is expected. User-facing diagnostics shall use configuration and command-line terms rather than requiring users to interpret ASN.1 or PyCrate internals.                                           |
-| ERR-4 | Apply a documented default only when its field is omitted. A present field with an invalid type or value shall be reported as an error; it shall not be silently coerced, clamped, or replaced with a default.                                    |
-| ERR-5 | For expected input, decoding, and file-access errors, exit with a nonzero status and do not print a Python traceback. Print a concise diagnostic for the generators and SPaT decoder. MAP decoding shall remain silent as specified in §5.2.      |
+| ID    | Requirement                                                                                                                                                                                                                                                                                                                                                          |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ERR-1 | Before generating output, validate the JSON5 syntax, document shape, required fields, field types and ranges, supported values, timing constraints, and applicable MAP/SPaT relationships. Every generation command shall validate both the MAP and SPaT sections, even when producing only one message type. Do not begin message generation when validation fails. |
+| ERR-2 | For a configuration error, identify the input file and the relevant JSON field path whenever available (for example, `spat.movements[1].phases[0].duration`). For a JSON5 syntax error, report the line and column when the parser provides them.                                                                                                                    |
+| ERR-3 | Explain what is invalid and what kind of value is expected. User-facing diagnostics shall use configuration and command-line terms rather than requiring users to interpret ASN.1 or PyCrate internals.                                                                                                                                                              |
+| ERR-4 | Apply a documented default only when its field is omitted. A present field with an invalid type or value shall be reported as an error; it shall not be silently coerced, clamped, or replaced with a default.                                                                                                                                                       |
+| ERR-5 | For expected input, decoding, and file-access errors, exit with a nonzero status and do not print a Python traceback. Print a concise diagnostic for the generators and SPaT decoder. MAP decoding shall remain silent as specified in §5.2.                                                                                                                         |
 
 ### 6.2 Command-line and output behavior
 
@@ -471,7 +488,7 @@ decoders. Where §5 defines more specific decoder behavior, §5 takes precedence
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ERR-6 | Each command-line entry point shall provide `--help` output describing its inputs, outputs, and available options.                                                                                                                                                                                                                  |
 | ERR-7 | Generator and SPaT decoder file-access diagnostics shall identify the affected path and whether the operation was reading input or writing output. Their success messages shall be printed only after the requested output has been written successfully. The MAP decoder shall remain silent as specified in §5.2.                 |
-| ERR-8 | The generator shall validate the configuration before creating or truncating its destination file. It shall write generated output to a temporary file and replace the requested destination only after generation and writing succeed. On failure, it shall exit with a nonzero status and preserve any existing destination file. |
+| ERR-8 | The generator shall validate the configuration before creating or truncating its destination file. It shall write generated output to a temporary file and replace the requested destination only after generation and writing succeed. On failure, it shall exit with a nonzero status and preserve any existing destination file. For `both`, failure to replace either output shall leave both destinations as they were before the command, even if the first replacement succeeded. |
 | ERR-9 | The generator shall make its destination-file overwrite behavior clear and shall not require interactive confirmation, so it can be used in scripts. The decoders' JSON overwrite and partial-decode behavior is specified in §5.                                                                                                   |
 
 The terminal output for generation and SPaT decoding shall remain readable when
@@ -523,3 +540,19 @@ SPAT.IntersectionState.set_val({
 | ASN.1 construction and UPER encoding | PyCrate                                                                                 |
 | JSON5 parsing                        | PyJson5                                                                                 |
 | SAE J2735 ASN.1 definitions          | [USDOT J2735 Python library](https://github.com/usdot-fhwa-stol/j2735_202409/tree/main) |
+
+9\. Testing
+-----------
+
+Automated tests shall check the main behaviors defined in this specification:
+
+* Configuration validation shall accept supported inputs and reject invalid
+  fields, values, and timing relationships with useful diagnostics.
+* MAP and SPaT generation shall be tested with a fixed UTC start time. Tests
+  shall check expected decoded fields, including lane connections, signal states
+  at phase boundaries, and timestamps.
+* Command-line tests shall check decoding, exit status, and preservation of
+  existing output files when generation fails.
+
+Generated UPER messages should also be checked with an independent J2735 decoder
+before they are used to assess receiver compatibility.

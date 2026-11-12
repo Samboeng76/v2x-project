@@ -3,13 +3,16 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
-from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from datetime import UTC, datetime, timedelta
+from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 import pyjson5
+from pycrate_core.charpy import Charpy
+
 import j2735_202409 as j2735
 
 
@@ -42,6 +45,12 @@ SIGNAL_GROUPS = {
     6: "Southbound left turn",
 }
 
+# Signalized through connections in the fourWayNoLeftTurn MAP layout.
+FOUR_WAY_THROUGH_CONNECTIONS = {1: (6, 2), 3: (8, 4), 5: (2, 1), 7: (4, 3)}
+FOUR_WAY_SIGNAL_GROUPS = frozenset(
+    signal_group for _, signal_group in FOUR_WAY_THROUGH_CONNECTIONS.values()
+)
+
 LAYER_TYPES = {
     "none",
     "mixedContent",
@@ -54,7 +63,7 @@ LAYER_TYPES = {
 }
 
 DEFAULT_INTERVAL = Decimal("0.1")
-MAX_PHASE_DURATION = Decimal("3600")
+MAX_PHASE_DURATION = Decimal(3600)
 NODE_OFFSET_MIN_CM = -4096
 NODE_OFFSET_MAX_CM = 4095
 
@@ -113,11 +122,11 @@ def _check_keys(
 ) -> None:
     unknown = set(value) - allowed
     if unknown:
-        key = sorted(unknown)[0]
+        key = min(unknown)
         raise UserInputError(f"{path}.{key}: unsupported field")
     missing = required - set(value)
     if missing:
-        key = sorted(missing)[0]
+        key = min(missing)
         raise UserInputError(f"{path}.{key}: required field is missing")
 
 
@@ -177,9 +186,9 @@ def _parse_status(value: Any, path: str = "spat.status") -> int:
     if not isinstance(value, str):
         raise UserInputError(f'{path}: expected "0b" plus 16 bits or "0x" plus 4 hex digits')
     if re.fullmatch(r"0[bB][01]{16}", value):
-        return int(value[2:], 2)
+        return int(value, 2)
     if re.fullmatch(r"0[xX][0-9a-fA-F]{4}", value):
-        return int(value[2:], 16)
+        return int(value, 16)
     raise UserInputError(f'{path}: expected "0b" plus 16 bits or "0x" plus 4 hex digits')
 
 
@@ -267,15 +276,15 @@ def validate_configuration(document: dict[str, Any]) -> Configuration:
         ref_point["latitude"],
         "map.refPoint.latitude",
         10_000_000,
-        Decimal("-90"),
-        Decimal("90"),
+        Decimal(-90),
+        Decimal(90),
     )
     longitude = _scaled_value(
         ref_point["longitude"],
         "map.refPoint.longitude",
         10_000_000,
         Decimal("-179.9999999"),
-        Decimal("180"),
+        Decimal(180),
     )
     elevation = None
     if "elevation" in ref_point:
@@ -328,8 +337,10 @@ def validate_configuration(document: dict[str, Any]) -> Configuration:
 
     spat_data = _mapping(document["spat"], "spat")
     _check_keys(spat_data, {"movements", "messageInterval", "status"}, {"movements"}, "spat")
-    interval = _positive_number(
-        spat_data.get("messageInterval", DEFAULT_INTERVAL), "spat.messageInterval"
+    interval = (
+        _positive_number(spat_data["messageInterval"], "spat.messageInterval")
+        if "messageInterval" in spat_data
+        else DEFAULT_INTERVAL
     )
     if interval < DEFAULT_INTERVAL:
         raise UserInputError("spat.messageInterval: the shortest supported interval is 0.1 seconds")
@@ -365,6 +376,12 @@ def validate_configuration(document: dict[str, Any]) -> Configuration:
         signal_group = _integer(
             movement_data["signalGroup"], f"{movement_path}.signalGroup", 1, 6
         )
+        if signal_group not in FOUR_WAY_SIGNAL_GROUPS:
+            raise UserInputError(
+                f"{movement_path}.signalGroup: ID {signal_group} "
+                f"({SIGNAL_GROUPS[signal_group]}) has no matching MAP lane connection "
+                "in fourWayNoLeftTurn"
+            )
         if signal_group in group_to_path:
             raise UserInputError(
                 f"{movement_path}.signalGroup: ID {signal_group} is already used at "
@@ -411,16 +428,6 @@ def validate_configuration(document: dict[str, Any]) -> Configuration:
         movements.append(Movement(name, signal_group, tuple(phases)))
         schedules.append(tuple(ends))
 
-    missing_groups = {1, 2, 3, 4} - set(group_to_path)
-    if missing_groups:
-        missing = ", ".join(
-            f"{group} ({SIGNAL_GROUPS[group]})" for group in sorted(missing_groups)
-        )
-        raise UserInputError(
-            "spat.movements: MAP through connections require signal-group IDs "
-            f"{missing}; define a movement for each"
-        )
-
     assert batch_ticks is not None
     return Configuration(
         include_timestamps=include_timestamps,
@@ -435,16 +442,6 @@ def validate_configuration(document: dict[str, Any]) -> Configuration:
             batch_ticks=batch_ticks,
         ),
     )
-
-
-def validate_combined_output(configuration: Configuration) -> None:
-    unsupported = [movement for movement in configuration.spat.movements if movement.signal_group in {5, 6}]
-    if unsupported:
-        groups = ", ".join(str(movement.signal_group) for movement in unsupported)
-        raise UserInputError(
-            "spat.movements: signal-group IDs 5 and 6 represent left turns, which "
-            f"are unsupported when MAP and SPaT are generated together (found {groups})"
-        )
 
 
 def _layout_points(settings: MapSettings) -> dict[int, tuple[tuple[Decimal, Decimal], ...]]:
@@ -502,8 +499,7 @@ def bit_string(bit_positions: tuple[int, ...], width: int) -> tuple[int, int]:
 
 def _map_lanes(settings: MapSettings) -> list[dict[str, Any]]:
     points_by_lane = _layout_points(settings)
-    # The required signalized through links from the specification.
-    through = {1: (6, 2), 3: (8, 4), 5: (2, 1), 7: (4, 3)}
+    through = FOUR_WAY_THROUGH_CONNECTIONS
     # The layout prose also permits unsignalized right turns. Destinations follow
     # the right-hand adjacent egress lane for each approach.
     right_turns = {1: 8, 3: 2, 5: 4, 7: 6}
@@ -590,7 +586,9 @@ def _timestamp_fields(moment: datetime) -> dict[str, int]:
 
 
 def encode_map(configuration: Configuration, start_time: datetime) -> bytes:
-    moment = start_time.astimezone(timezone.utc)
+    if start_time.tzinfo is None or start_time.utcoffset() is None:
+        raise UserInputError("start time must include a timezone")
+    moment = start_time.astimezone(UTC)
     intersection: dict[str, Any] = {
         "name": configuration.intersection_name,
         "id": {"id": configuration.intersection_id},
@@ -617,7 +615,7 @@ def encode_map(configuration: Configuration, start_time: datetime) -> bytes:
     try:
         j2735.MapData.MapData.set_val(map_value)
         return j2735.MapData.MapData.to_uper()
-    except Exception:
+    except Exception:  # noqa: BLE001 - PyCrate raises multiple encoding exceptions.
         raise MessageEncodingError(
             "could not encode MAP; check that the configuration fits the supported J2735 profile"
         ) from None
@@ -627,9 +625,9 @@ def generate_spat_messages(
     configuration: Configuration, start_time: datetime
 ) -> Iterator[bytes]:
     """Yield one complete top-level SPAT UPER message per sample time."""
-    if start_time.tzinfo is None:
+    if start_time.tzinfo is None or start_time.utcoffset() is None:
         raise UserInputError("start time must include a timezone")
-    start = start_time.astimezone(timezone.utc)
+    start = start_time.astimezone(UTC)
     interval = configuration.spat.interval_ms
     settings = configuration.spat
     for sample_tick in range(settings.batch_ticks):
@@ -668,7 +666,7 @@ def generate_spat_messages(
         try:
             j2735.SPAT.SPAT.set_val(frame)
             yield j2735.SPAT.SPAT.to_uper()
-        except Exception:
+        except Exception:  # noqa: BLE001 - PyCrate raises multiple encoding exceptions.
             raise MessageEncodingError(
                 "could not encode SPaT; check that the configuration fits the supported J2735 profile"
             ) from None
@@ -688,9 +686,12 @@ def decode_spat(hex_text: str) -> dict[str, Any]:
     """Decode a raw hexadecimal J2735 SPAT UPER message."""
     encoded = _hex_message_bytes(hex_text)
     try:
-        j2735.SPAT.SPAT.from_uper(encoded)
+        cursor = Charpy(encoded)
+        j2735.SPAT.SPAT.from_uper_ws(cursor)
+        if cursor.len_bit():
+            raise ValueError("trailing data")
         decoded = j2735.SPAT.SPAT.get_val()
-    except Exception:
+    except Exception:  # noqa: BLE001 - PyCrate raises multiple decode exceptions.
         raise UserInputError(
             "cannot decode message as a raw J2735 SPAT UPER frame"
         ) from None
@@ -703,7 +704,10 @@ def decode_map(hex_text: str) -> dict[str, Any]:
     """Decode a raw hexadecimal J2735 MapData UPER message."""
     encoded = _hex_message_bytes(hex_text)
     try:
-        j2735.MapData.MapData.from_uper(encoded)
+        cursor = Charpy(encoded)
+        j2735.MapData.MapData.from_uper_ws(cursor)
+        if cursor.len_bit():
+            raise ValueError("trailing data")
         decoded = j2735.MapData.MapData.get_val()
     except Exception:  # noqa: BLE001 - PyCrate can raise several decode errors.
         raise UserInputError(

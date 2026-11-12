@@ -1,4 +1,4 @@
 [submodule "src/j2735_202409"]
 	path = src/j2735_202409
-	url = https://github.com/usdot-fhwa-stol/j2735decoder.git
+	url = https://github.com/usdot-fhwa-stol/j2735_202409.git
 	branch = develop
