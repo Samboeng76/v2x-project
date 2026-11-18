@@ -60,6 +60,7 @@ class _StagedFile:
     temporary: Path
     description: str
     backup: Path | None = None
+    retain_backup: bool = False
 
 
 def _binary_job(path: Path, description: str, chunks: Iterable[bytes]) -> _OutputJob:
@@ -126,7 +127,9 @@ def _stage_outputs(jobs: list[_OutputJob]) -> list[_StagedFile]:
                 os.replace(item.temporary, item.destination)
                 committed.append(item)
         except OSError as error:
+            failed_destination = item.destination
             rollback_errors: list[str] = []
+            retained_backups: list[tuple[Path, Path]] = []
             for item in reversed(committed):
                 try:
                     if item.backup is not None:
@@ -139,10 +142,15 @@ def _stage_outputs(jobs: list[_OutputJob]) -> list[_StagedFile]:
                         f"could not restore {item.destination}: "
                         f"{rollback_error.strerror or rollback_error}"
                     )
-            detail = f"writing output {item.destination}: {error.strerror or error}"
+                    if item.backup is not None:
+                        item.retain_backup = True
+                        retained_backups.append((item.destination, item.backup))
+            detail = f"writing output {failed_destination}: {error.strerror or error}"
             if rollback_errors:
                 detail += "; " + "; ".join(rollback_errors)
-                detail += "; backup files were retained where restoration failed"
+                for destination, backup in retained_backups:
+                    detail += f"; retained backup for {destination}: {backup}"
+                detail += "; outputs may be from different generations"
             raise UserInputError(detail) from None
         for item in staged:
             if item.backup is not None:
@@ -160,19 +168,11 @@ def _stage_outputs(jobs: list[_OutputJob]) -> list[_StagedFile]:
                 item.temporary.unlink(missing_ok=True)
             except OSError:
                 pass
-            if item.backup is not None:
-                # If rollback left the backup in place, keep it available for
-                # manual recovery instead of deleting the only old copy.
-                committed_destination_changed = (
-                    item.destination.exists()
-                    and item.temporary.exists() is False
-                    and item.backup.exists()
-                )
-                if not committed_destination_changed:
-                    try:
-                        item.backup.unlink(missing_ok=True)
-                    except OSError:
-                        pass
+            if item.backup is not None and not item.retain_backup:
+                try:
+                    item.backup.unlink(missing_ok=True)
+                except OSError:
+                    pass
 
 
 def _reject_source_overwrite(source: Path, targets: list[Path]) -> None:

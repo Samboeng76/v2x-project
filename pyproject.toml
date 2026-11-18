@@ -8,9 +8,13 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "j2735-202409==0.1.0",
     "pycrate>=0.8.1",
     "pyjson5>=2.0.1",
 ]
+
+[tool.uv.sources]
+j2735-202409 = { path = "src/j2735_202409/dist/j2735_202409-0.1.0-py3-none-any.whl" }
 
 [project.scripts]
 v2x-project = "v2x_project:main"

@@ -21,11 +21,10 @@ If you already cloned without submodules, initialize them with:
 git submodule update --init --recursive
 ```
 
-Install dependencies and the local J2735 package:
+Install dependencies, including the local J2735 package:
 
 ```sh
 uv sync
-uv pip install ./src/j2735_202409
 ```
 
 Generate a MAP message:

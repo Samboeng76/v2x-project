@@ -7,8 +7,12 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import pyjson5
+
+from v2x_project.cli import _binary_job, _stage_outputs
+from v2x_project.core import UserInputError
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "inputFiles/SampleIntersection.json5"
@@ -223,6 +227,79 @@ class CommandLineBehaviorTests(unittest.TestCase):
             self.assertEqual(
                 blocked_parent.read_text(encoding="utf-8"), "a file, not a directory\n"
             )
+
+    def test_failed_second_replacement_reports_spat_and_restores_map(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            map_output = temporary / "map.txt"
+            spat_output = temporary / "spat.txt"
+            map_output.write_text("original map\n", encoding="utf-8")
+            spat_output.write_text("original spat\n", encoding="utf-8")
+            real_replace = os.replace
+            destinations: list[Path] = []
+
+            def replace(source: Path, destination: Path) -> None:
+                destinations.append(destination)
+                if destination == spat_output:
+                    raise PermissionError("simulated second replacement failure")
+                real_replace(source, destination)
+
+            jobs = [
+                _binary_job(map_output, "MAP output", [b"new map"]),
+                _binary_job(spat_output, "SPaT output", [b"new spat"]),
+            ]
+            with (
+                patch("v2x_project.cli.os.replace", side_effect=replace),
+                self.assertRaises(UserInputError) as caught,
+            ):
+                _stage_outputs(jobs)
+
+            self.assertEqual(destinations, [map_output, spat_output, map_output])
+            self.assertIn(f"writing output {spat_output}", str(caught.exception))
+            self.assertNotIn(f"writing output {map_output}", str(caught.exception))
+            self.assertEqual(map_output.read_text(encoding="utf-8"), "original map\n")
+            self.assertEqual(spat_output.read_text(encoding="utf-8"), "original spat\n")
+            self.assertEqual(list(temporary.glob(".*.backup")), [])
+
+    def test_failed_rollback_reports_and_retains_exact_backup(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            map_output = temporary / "map.txt"
+            spat_output = temporary / "spat.txt"
+            map_output.write_text("original map\n", encoding="utf-8")
+            spat_output.write_text("original spat\n", encoding="utf-8")
+            real_replace = os.replace
+            destinations: list[Path] = []
+
+            def replace(source: Path, destination: Path) -> None:
+                destinations.append(destination)
+                if destination == spat_output:
+                    raise PermissionError("simulated second replacement failure")
+                if destination == map_output and source.suffix == ".backup":
+                    raise PermissionError("simulated rollback failure")
+                real_replace(source, destination)
+
+            jobs = [
+                _binary_job(map_output, "MAP output", [b"new map"]),
+                _binary_job(spat_output, "SPaT output", [b"new spat"]),
+            ]
+            with (
+                patch("v2x_project.cli.os.replace", side_effect=replace),
+                self.assertRaises(UserInputError) as caught,
+            ):
+                _stage_outputs(jobs)
+
+            backups = list(temporary.glob(".*.backup"))
+            self.assertEqual(destinations, [map_output, spat_output, map_output])
+            self.assertEqual(len(backups), 1)
+            self.assertEqual(backups[0].read_text(encoding="utf-8"), "original map\n")
+            detail = str(caught.exception)
+            self.assertIn(f"writing output {spat_output}", detail)
+            self.assertIn(f"could not restore {map_output}", detail)
+            self.assertIn(f"retained backup for {map_output}: {backups[0]}", detail)
+            self.assertIn("outputs may be from different generations", detail)
+            self.assertNotEqual(map_output.read_text(encoding="utf-8"), "original map\n")
+            self.assertEqual(spat_output.read_text(encoding="utf-8"), "original spat\n")
 
 
 if __name__ == "__main__":

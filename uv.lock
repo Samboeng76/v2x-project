@@ -3,6 +3,20 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
+name = "j2735-202409"
+version = "0.1.0"
+source = { path = "src/j2735_202409/dist/j2735_202409-0.1.0-py3-none-any.whl" }
+dependencies = [
+    { name = "pycrate" },
+]
+wheels = [
+    { filename = "j2735_202409-0.1.0-py3-none-any.whl", hash = "sha256:553d982cdf3cb32b5792a0fe64b52b2d4e00181c969e23d465e4c61dce9355dd" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pycrate", specifier = ">=0.7.11" }]
+
+[[package]]
 name = "pycrate"
 version = "0.8.1"
 source = { registry = "https://pypi.org/simple" }
@@ -129,6 +143,7 @@ name = "v2x-project"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "j2735-202409" },
     { name = "pycrate" },
     { name = "pyjson5" },
 ]
@@ -140,6 +155,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "j2735-202409", path = "src/j2735_202409/dist/j2735_202409-0.1.0-py3-none-any.whl" },
     { name = "pycrate", specifier = ">=0.8.1" },
     { name = "pyjson5", specifier = ">=2.0.1" },
 ]
