@@ -96,6 +96,22 @@ class ConfigurationTests(unittest.TestCase):
             self.assertIn(str(source), str(raised.exception))
             self.assertIn("JSON5 syntax error", str(raised.exception))
 
+    def test_coordinates_and_elevation_just_outside_limits_are_rejected(self) -> None:
+        cases = (
+            ("latitude", -90.0000001),
+            ("latitude", 90.0000001),
+            ("longitude", -180),
+            ("longitude", 180.0000001),
+            ("elevation", -409.6),
+            ("elevation", 6144.0),
+        )
+        for field, value in cases:
+            with self.subTest(field=field, value=value):
+                document = sample_document()
+                document["map"]["refPoint"][field] = value
+                with self.assertRaisesRegex(UserInputError, f"map.refPoint.{field}"):
+                    validate_configuration(document)
+
 
 if __name__ == "__main__":
     unittest.main()

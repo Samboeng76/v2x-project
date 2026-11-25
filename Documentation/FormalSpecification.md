@@ -580,5 +580,29 @@ Automated tests shall check the main behaviors defined in this specification:
   values, select message IDs 18 and 19 respectively, and reject a frame of the
   wrong message type or with trailing whole bytes.
 
+Boundary tests shall also cover:
+
+* SPaT intersection revisions at sample ticks 127, 128, and 129 shall be 127,
+  0, and 1 respectively; MAP revisions shall remain 0.
+* A batch crossing from 2024-12-31 23:59:59.900 UTC into 2025-01-01 shall
+  change `MinuteOfTheYear` from 527039 to 0 and the SPaT intersection
+  `timeStamp` from 59900 to 0. The MAP timestamp shall match the first SPaT
+  sample's minute.
+* With `includeTimestamps: false`, optional MAP and SPaT timestamp fields shall
+  be absent while SPaT event `minEndTime` remains present.
+* `minEndTime` shall round phase-end times to the nearest tenth of a second,
+  rounding an exact 0.05-second midpoint up, and shall wrap to 0 at a UTC hour
+  boundary.
+* Latitude, longitude, and elevation shall accept their specified minimum and
+  maximum values and reject values just outside those ranges. Positive and
+  negative exact halfway values shall round away from zero when converted to
+  J2735 units.
+* With the other default layout dimensions, `approachExtentM: 40.95` shall fit
+  `node-XY4`, while `approachExtentM: 40.96` shall be rejected with a diagnostic
+  identifying the geometry fields.
+
 Generated UPER messages should also be checked with an independent J2735 decoder
 before they are used to assess receiver compatibility.
+
+**Limitation:** A validator using the same PyCrate codec is not an independent
+check and does not establish compatibility with other receivers.
